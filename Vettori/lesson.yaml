@@ -1,0 +1,230 @@
+- Class: meta
+  Course: R Programming E
+  Lesson: Vectors
+  Author: Nick Carchedi
+  Type: Standard
+  Organization: JHU Biostat
+  Version: 2.2.0
+- Class: text
+  Output: La struttura dati più semplice e comune in R è il vettore.
+- Class: text
+  Output: 'I vettori sono disponibili in due tipi diversi: vettori atomici e liste.
+    Un vettore atomico contiene esattamente un tipo di dati, mentre una lista può
+    contenere più tipi di dati. Esploreremo ulteriormente i vettori atomici prima
+    di arrivare alle liste.'
+- Class: text
+  Output: Nelle lezioni precedenti ci siamo occupati interamente di vettori numerici,
+    che sono un tipo di vettore atomico. Altri tipi di vettori atomici includono valori logici,
+    caratteri, numeri interi e complessi. In questa lezione, daremo un'occhiata più
+    da vicino ai vettori logici e di caratteri.
+- Class: text
+  Output: I vettori logici possono contenere i valori VERO, FALSO e NA (per "non disponibile").
+    Questi valori sono generati come risultato di 'condizioni' logiche. Proviamo con
+    alcune semplici condizioni.
+- Class: cmd_question
+  Output: Innanzitutto, crea un vettore numerico num_vect che contenga i valori 0,5,
+    55, -10 e 6.
+  CorrectAnswer: num_vect <- c(0.5, 55, -10, 6)
+  AnswerTests: omnitest(correctExpr='num_vect <- c(0.5, 55, -10, 6)')
+  Hint: Ricordiamo che la funzione c() viene utilizzata per creare un vettore. Se
+    dimentichi come usarlo, usa ?c per accedere al file della guida. Non dimenticare
+    di assegnare il risultato a una nuova variabile chiamata num_vect.
+- Class: cmd_question
+  Output: Ora, crea una variabile chiamata tf che ottiene il risultato di num_vect
+    < 1, che viene letto come 'num_vect è minore di 1'.
+  CorrectAnswer: tf <- num_vect < 1
+  AnswerTests: omnitest(correctExpr='tf <- num_vect < 1')
+  Hint: Utilizzare tf <- num_vect < 1 per assegnare il risultato di num_vect < 1 a
+    una variabile chiamata tf.
+- Class: mult_question
+  Output: Come pensi che sarà?
+  CorrectAnswer: a vector of 4 logical values
+  AnswerChoices: a vector of 4 logical values; a single logical value
+  AnswerTests: omnitest(correctVal='a vector of 4 logical values')
+  Hint: Ricordi la nostra lezione sull'aritmetica vettoriale? Il tema era che R esegue
+    molte operazioni elemento per elemento. Abbiamo chiamato queste operazioni "vettorizzate".
+- Class: cmd_question
+  Output: Stampa ora il contenuto di tf.
+  CorrectAnswer: tf
+  AnswerTests: omnitest(correctExpr='tf')
+  Hint: Basta digitare tf e premere Invio per visualizzare il suo valore.
+- Class: text
+  Output: L'istruzione num_vect < 1 è una condizione e tf ci dice se ogni elemento
+    corrispondente del nostro vettore numerico num_vect soddisfa questa condizione.
+- Class: text
+  Output: Il primo elemento di num_vect è 0.5, che è minore di 1 e quindi l'affermazione
+    0.5 < 1 è TRUE. Il secondo elemento di num_vect è 55, che è maggiore di 1, quindi
+    l'affermazione 55 < 1 è FALSE. La stessa logica vale per il terzo e quarto elemento.
+- Class: cmd_question
+  Output: Proviamo un altro. Digitare num_vect >= 6 senza assegnare il risultato a
+    una nuova variabile.
+  CorrectAnswer: num_vect >= 6
+  AnswerTests: omnitest(correctExpr='num_vect >= 6')
+  Hint: Non creare una nuova variabile su questo. Vogliamo solo vedere il risultato
+    di num_vect >= 6. Assicurati che non ci sia spazio tra i simboli `>` e `=`. Pensali
+    come un simbolo che rappresenta "maggiore o uguale a".
+- Class: text
+  Output: Questa volta chiediamo se ogni singolo elemento di num_vect è maggiore di
+    OR uguale a 6. Poiché solo 55 e 6 sono maggiori o uguali a 6, il secondo e il
+    quarto elemento del risultato sono TRUE e il primo e il terzo elemento sono FALSO.
+- Class: text
+  Output: I simboli `<` e `>=` in questi esempi sono chiamati 'operatori logici'.
+    Altri operatori logici includono `>`, `<=`, `==` per l'uguaglianza esatta e `!=`
+    per la disuguaglianza.
+- Class: text
+  Output: Se abbiamo due espressioni logiche, A e B, possiamo chiederci se almeno
+    una è VERA con A | B ('OR' logico anche detto 'unione') o se sono entrambi VERO con
+    A & B ('AND' logico anche detto 'intersezione'). Infine, !A è la negazione di A ed è
+    VERO quando A è FALSO e viceversa (operatore 'NOT').
+- Class: text
+  Output: È una buona idea dedicare un po' di tempo a giocare con varie combinazioni
+    di questi operatori logici finché non si acquisisce familiarità con il loro utilizzo.
+    Faremo alcuni esempi qui per iniziare.
+- Class: text
+  Output: Fai del tuo meglio per prevedere il risultato di ciascuna delle seguenti
+    affermazioni. Puoi usare carta e matita per risolverli se ti è utile. Se rimani
+    bloccato, indovina e hai il 50% di possibilità di ottenere la risposta giusta!
+- Class: mult_question
+  Output: (3 > 5) & (4 == 4)
+  CorrectAnswer: 'FALSE'
+  AnswerChoices: TRUE; FALSE
+  AnswerTests: omnitest(correctVal='FALSE')
+  Hint: Suddividi questo problema in 2 parti. Il `&` nel mezzo indica che ENTRAMBE
+    le parti sono vere (TRUE). Il tuo compito è capire se si tratta di un'affermazione accurata.
+    In tal caso, l'intera condizione è TRUE. Se no, è FALSO.
+- Class: mult_question
+  Output: (VERO == VERO) | (VERO == FALSO)
+  CorrectAnswer: 'TRUE'
+  AnswerChoices: TRUE; FALSE
+  AnswerTests: omnitest(correctVal='TRUE')
+  Hint: Suddividi questo problema in 2 parti. Il `|` nel mezzo indica che ALMENO UNA
+    delle parti è VERA (TRUE). Il tuo compito è capire se si tratta di un'affermazione accurata.
+    In tal caso, l'intera condizione è TRUE. Se no, è FALSO.
+- Class: mult_question
+  Output: ((111 >= 111) | !(VERO)) & ((4 + 1) == 5)
+  CorrectAnswer: 'TRUE'
+  AnswerChoices: TRUE; FALSE
+  AnswerTests: omnitest(correctVal='TRUE')
+  Hint: Questo è complicato. Ricorda che il simbolo `!` nega tutto ciò che viene dopo
+    di esso. C'è anche un "ordine delle operazioni" in corso qui. Le condizioni racchiuse
+    tra parentesi devono essere valutate per prime. Quindi, procedi verso l'esterno.
+- Class: text
+  Output: Non preoccuparti se li trovi complicati. Dovrebbero esserlo. Lavorare con
+    affermazioni logiche in R richiede pratica, ma i tuoi sforzi saranno premiati
+    nelle lezioni future (ad es. Sottoinsiemi e strutture di controllo).
+- Class: text
+  Output: Anche i vettori di caratteri sono molto comuni in R. Le virgolette doppie
+    vengono utilizzate per distinguere gli oggetti carattere, come nell'esempio seguente.
+- Class: cmd_question
+  Output: 'Crea un vettore di caratteri che contenga le seguenti parole: "My", "name",
+    "is". Ricorda di racchiudere ogni parola nel proprio insieme di virgolette doppie,
+    in modo che R sappia che sono stringhe di caratteri. Memorizza il vettore in una
+    variabile chiamata my_char.'
+  CorrectAnswer: my_char <- c("My", "name", "is")
+  AnswerTests: omnitest(correctExpr='my_char <- c("My", "name", "is")')
+  Hint: Digita my_char <- c("My", "name", "is") per creare una nuova variabile chiamata
+    my_char che contenga un vettore di caratteri di lunghezza 3. Assicurati che le
+    virgole che separano le parole siano FUORI dalle virgolette, oppure altrimenti
+    R pensa che le virgole facciano parte delle parole.
+- Class: cmd_question
+  Output: Stampa il contenuto di my_char per vedere come appare.
+  CorrectAnswer: my_char
+  AnswerTests: omnitest(correctExpr='my_char')
+  Hint: Digita my_char per visualizzarne il contenuto.
+- Class: text
+  Output: In questo momento, my_char è un vettore di caratteri di lunghezza 3. Supponiamo
+    di voler unire gli elementi di my_char insieme in una stringa di caratteri continua
+    (ovvero un vettore di caratteri di lunghezza 1). Possiamo farlo usando la funzione
+    paste().
+- Class: cmd_question
+  Output: Digita paste(my_char, collapse = " ") ora. Assicurati che ci sia uno spazio
+    tra le doppie virgolette nell'argomento `collapse`. Vedrai perché in un secondo.
+  CorrectAnswer: paste(my_char, collapse = " ")
+  AnswerTests: omnitest(correctExpr='paste(my_char, collapse = " ")')
+  Hint: Usa paste(my_char, collapse = " ") per comprimere le parole nel vettore in modo
+    che formino quasi una frase. Dovrebbe esserci un singolo spazio tra le virgolette
+    doppie nell'argomento `collapse` in modo che ci siano spazi singoli che separano
+    le parole.
+- Class: text
+  Output: L'argomento `collapse` della funzione paste() dice a R che quando uniamo
+    gli elementi del vettore di caratteri my_char, vorremmo separarli con spazi singoli.
+- Class: text
+  Output: Sembra che ci manchi qualcosa.... Ah, sì! Il tuo nome!
+- Class: cmd_question
+  Output: 'Per aggiungere (o ''concatenare'') il tuo nome alla fine di my_char, usa
+    la funzione c() in questo modo: c(my_char, "your_name_here"). Metti il tuo nome
+    tra virgolette dove ho messo "your_name_here". Provalo ora, memorizzando il risultato
+    in una nuova variabile chiamata my_name.'
+  CorrectAnswer: my_name <- c(my_char, "Swirl")
+  AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
+    val_has_length(4)
+  Hint: Aggiungi il tuo nome alla fine del vettore my_char usando la funzione c().
+    Assicurati di assegnare il risultato a una nuova variabile chiamata my_name. Se
+    il tuo nome fosse "Swirl", dovresti digitare my_name <- c(my_char, "Swirl").
+- Class: cmd_question
+  Output: Dai un'occhiata al contenuto di my_name.
+  CorrectAnswer: my_name
+  AnswerTests: omnitest(correctExpr='my_name')
+  Hint: Digita my_name e premi Invio per visualizzarne il contenuto.
+- Class: cmd_question
+  Output: Ora, usa ancora una volta la funzione paste() per unire le parole in my_name
+    insieme in una singola stringa di caratteri. Non dimenticare di dire collapse
+    = " "!
+  CorrectAnswer: paste(my_name, collapse = " ")
+  AnswerTests: omnitest(correctExpr='paste(my_name, collapse = " ")')
+  Hint: Usa paste(my_name, collapse = " ") per unire tutte e quattro le parole insieme,
+    separate da spazi singoli.
+- Class: text
+  Output: In questo esempio, abbiamo utilizzato la funzione paste() per comprimere
+    gli elementi di un singolo vettore di carattere. paste() può essere utilizzato
+    anche per unire gli elementi di più vettori di caratteri.
+- Class: cmd_question
+  Output: Nel caso più semplice, possiamo unire due vettori di caratteri che sono
+    ciascuno di lunghezza 1 (cioè unire due parole). Prova paste("Hello", "world!",
+    sep = " "), dove l'argomento `sep` dice a R che vogliamo separare gli elementi
+    uniti con un singolo spazio.
+  CorrectAnswer: paste("Hello", "world!", sep = " ")
+  AnswerTests: omnitest(correctExpr='paste("Hello", "world!", sep = " ")')
+  Hint: Immettere paste("Hello", "world!", sep = " ") per unire le due parole "Hello"
+    e "world", separate da un singolo spazio. Dovrebbe esserci un singolo spazio tra
+    le virgolette doppie nell'argomento `sep` della funzione paste().
+- Class: cmd_question
+  Output: Per un esempio leggermente più complicato, possiamo unire due vettori, ognuno
+    di lunghezza 3. Usa paste() per unire il vettore intero 1:3 con il vettore di
+    caratteri c("X", "Y", "Z"). Questa volta, usa sep = "" per non lasciare spazio
+    tra gli elementi uniti.
+  CorrectAnswer: paste(1:3, c("X", "Y", "Z"), sep = "")
+  AnswerTests: any_of_exprs('paste(1:3, c("X", "Y", "Z"), sep = "")', 'paste(c(1:3),
+    c("X", "Y", "Z"), sep = "")')
+  Hint: Usa paste(1:3, c("X", "Y", "Z"), sep = "") per vedere cosa succede quando
+    uniamo due vettori di uguale lunghezza usando paste().
+- Class: text
+  Output: 'Cosa pensi che accadrà se i nostri vettori sono di lunghezza diversa? (Suggerimento:
+    ne abbiamo parlato in una lezione precedente.)'
+- Class: cmd_question
+  Output: Riciclaggio vettoriale! Prova paste(LETTERS, 1:4, sep = "-"), dove LETTERS
+    è una variabile predefinita in R contenente un vettore di caratteri di tutte le
+    26 lettere dell'alfabeto inglese.
+  CorrectAnswer: paste(LETTERS, 1:4, sep = "-")
+  AnswerTests: omnitest(correctExpr='paste(LETTERS, 1:4, sep = "-")')
+  Hint: Digita paste(LETTERS, 1:4, sep = "-") per vedere come R ricicla il vettore
+    1:4 in modo che corrisponda alla lunghezza di LETTERS. Nota che stiamo usando
+    `-` come separatore questa volta invece di un singolo spazio.
+- Class: text
+  Output: Poiché il vettore di caratteri LETTER è più lungo del vettore numerico 1:4,
+    R semplicemente ricicla o ripete 1:4 finché non corrisponde alla lunghezza di
+    LETTERS.
+- Class: text
+  Output: Vale anche la pena notare che il vettore numerico 1:4 viene "forzato" in
+    un vettore di caratteri dalla funzione paste().
+- Class: text
+  Output: Discuteremo della coercizione in un'altra lezione, ma tutto ciò che significa
+    veramente è che i numeri 1, 2, 3 e 4 nell'output sopra non sono più numeri di
+    R, ma piuttosto caratteri "1", "2", "3 ", e "4".
+- Class: mult_question
+  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+    via e-mail?
+  CorrectAnswer: ~
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: ~

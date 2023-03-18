@@ -1,0 +1,238 @@
+- Class: meta
+  Course: R Programming E
+  Lesson: Subset di Vettori
+  Author: Nick Carchedi
+  Type: Standard
+  Organization: JHU Biostat
+  Version: 2.2.0
+- Class: text
+  Output: In questa lezione vedremo come estrarre elementi da un vettore in base ad
+    alcune condizioni che specifichiamo.
+- Class: text
+  Output: Ad esempio, potremmo essere interessati solo ai primi 20 elementi di un
+    vettore, o solo agli elementi che non sono NA, o solo a quelli che sono positivi
+    o corrispondono a una specifica variabile di interesse. Alla fine di questa lezione
+    saprai come gestire ognuno di questi scenari.
+- Class: cmd_question
+  Output: Ho creato per te un vettore chiamato x che contiene un ordinamento casuale
+    di 20 numeri (da una distribuzione normale standard) e 20 NA. Digita x ora per
+    vedere come appare.
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Digita x per visualizzarne il contenuto.
+- Class: text
+  Output: Il modo in cui dici a R che vuoi selezionare alcuni elementi particolari
+    (cioè un "sottoinsieme") da un vettore è posizionando un "vettore indice" tra
+    parentesi quadre immediatamente dopo il nome del vettore.
+- Class: cmd_question
+  Output: Per un semplice esempio, prova x[1:10] per visualizzare i primi dieci elementi
+    di x.
+  CorrectAnswer: x[1:10]
+  AnswerTests: omnitest(correctExpr='x[1:10]')
+  Hint: Visualizza i primi dieci elementi di x con x[1:10].
+- Class: text
+  Output: 'I vettori indice sono disponibili in quattro diversi tipi: vettori logici,
+    vettori di interi positivi, vettori di interi negativi e vettori di stringhe di
+    caratteri, ognuno dei quali verrà trattato in questa lezione.'
+- Class: text
+  Output: Cominciamo dall'indicizzazione con vettori logici. Uno scenario comune quando
+    si lavora con dati del mondo reale è che vogliamo estrarre tutti gli elementi
+    di un vettore che non sono NA (cioè dati mancanti). Ricordiamo che is.na(x) produce
+    un vettore di valori logici della stessa lunghezza di x, con TRUE corrispondenti
+    a valori NA in x e FALSE corrispondenti a valori non NA in x.
+- Class: mult_question
+  Output: Cosa pensi che ti darà x[is.na(x)]?
+  AnswerChoices: Un vettore di tutti NA; Un vettore senza NA; Un vettore di TRUE e
+    FALSE; Un vettore di lunghezza 0
+  CorrectAnswer: Un vettore di tutti NA
+  AnswerTests: omnitest(correctVal="Un vettore di tutti NA")
+  Hint: Ricorda che is.na(x) ci dice dove sono gli NA in un vettore. Quindi se sottoinsiemiamo
+    x in base a questo, cosa ti aspetti che accada?
+- Class: cmd_question
+  Output: Prova digitando x[is.na(x)].
+  CorrectAnswer: x[is.na(x)]
+  AnswerTests: omnitest(correctExpr='x[is.na(x)]')
+  Hint: Digita x[is.na(x)] per vedere che ottieni tutti gli NA, che chiaramente non
+    è quello che vogliamo!
+- Class: cmd_question
+  Output: Ricordiamo che `!` ci dà la negazione di un'espressione logica, quindi !is.na(x)
+    può essere letto come 'non è NA'. Pertanto, se vogliamo creare un vettore chiamato
+    y che contenga tutti i valori non NA di x, possiamo usare y <- x[!is.na(x)]. Prova.
+  CorrectAnswer: y <- x[!is.na(x)]
+  AnswerTests: omnitest(correctExpr='y <- x[!is.na(x)]')
+  Hint: Digitare y <- x[!is.na(x)] per acquisire tutti i valori non mancanti da x.
+- Class: cmd_question
+  Output: Stampa y sulla console.
+  CorrectAnswer: 'y'
+  AnswerTests: omnitest(correctExpr='y')
+  Hint: Digita y per visualizzarne il contenuto.
+- Class: text
+  Output: Ora che abbiamo isolato i valori non mancanti di x e li abbiamo inseriti
+    in y, possiamo creare sottoinsiemi di y a nostro piacimento.
+- Class: mult_question
+  Output: Ricordiamo che l'espressione y > 0 ci darà un vettore di valori logici della
+    stessa lunghezza di y, con TRUE corrispondenti a valori di y maggiori di zero
+    e FALSE corrispondenti a valori di y minori o uguali a zero. Cosa pensi che ti
+    darà y[y > 0]?
+  AnswerChoices: Un vettore di tutti gli elementi positivi di y; Un vettore di 
+    tutti gli elementi negativi di y; Un vettore di tutti NA; Un vettore di lunghezza 0; 
+    Un vettore di TRUE e FALSE
+  CorrectAnswer: Un vettore di tutti gli elementi positivi di y
+  AnswerTests: omnitest(correctVal="Un vettore di tutti gli elementi positivi di y")
+  Hint: L'espressione logica y > 0 ci darà TRUE per ogni elemento di y che è positivo.
+    Sulla base di ciò, cosa pensi che restituirà y[y > 0]?
+- Class: cmd_question
+  Output: Digita y[y > 0] per vedere che otteniamo tutti gli elementi positivi di
+    y, che sono anche gli elementi positivi del nostro vettore originale x.
+  CorrectAnswer: y[y > 0]
+  AnswerTests: omnitest(correctExpr='y[y > 0]')
+  Hint: Digitare y[y > 0] per visualizzare solo gli elementi positivi di y.
+- Class: cmd_question
+  Output: Potresti chiederti perché non abbiamo semplicemente iniziato con x[x > 0]
+    per isolare gli elementi positivi di x. Provalo ora per vedere perché.
+  CorrectAnswer: x[x > 0]
+  AnswerTests: omnitest(correctExpr='x[x > 0]')
+  Hint: Prova x[x > 0] per vedere perché non abbiamo utilizzato questo approccio.
+- Class: text
+  Output: Poiché NA non è un valore, ma piuttosto un segnaposto per una quantità sconosciuta,
+    l'espressione NA > 0 restituisce NA. Quindi otteniamo un mucchio di NA mescolati
+    con i nostri numeri positivi quando lo facciamo.
+- Class: cmd_question
+  Output: Combinando la nostra conoscenza degli operatori logici con la nostra nuova
+    conoscenza dei sottoinsiemi, potremmo fare questo -- x[!is.na(x) & x > 0]. Provalo.
+  CorrectAnswer: x[!is.na(x) & x > 0]
+  AnswerTests: omnitest(correctExpr='x[!is.na(x) & x > 0]')
+  Hint: Prova x[!is.na(x) & x > 0] per vedere cosa ottieni.
+- Class: text
+  Output: In questo caso, richiediamo solo valori di x che siano entrambi non mancanti
+    E maggiori di zero.
+- Class: text
+  Output: Ti ho già mostrato come creare un sottoinsieme solo dei primi dieci valori
+    di x usando x[1:10]. In questo caso, stiamo fornendo un vettore di numeri interi
+    positivi all'interno delle parentesi quadre, che dice a R di restituire solo gli
+    elementi di x numerati da 1 a 10.
+- Class: text
+  Output: Molti linguaggi di programmazione usano quella che viene chiamata "indicizzazione
+    in base zero", il che significa che il primo elemento di un vettore è considerato
+    l'elemento 0. R usa "indicizzazione in base uno", che (hai indovinato!) significa
+    il primo elemento di un vettore è considerato l'elemento 1.
+- Class: cmd_question
+  Output: 'Riesci a capire come sottoinsiemeremo il 3°, 5° e 7° elemento di x? Suggerimento:
+    utilizzare la funzione c() per specificare i numeri degli elementi come vettore
+    numerico.'
+  CorrectAnswer: x[c(3, 5, 7)]
+  AnswerTests: omnitest(correctExpr='x[c(3, 5, 7)]')
+  Hint: Crea un vettore di indici con c(3, 5, 7), quindi inseriscilo all'interno delle
+    parentesi quadre.
+- Class: cmd_question
+  Output: È importante che quando si utilizzano vettori interi per creare un sottoinsieme
+    del nostro vettore x, ci atteniamo all'insieme di indici {1, 2, ..., 40} poiché
+    x ha solo 40 elementi. Cosa succede se chiediamo l'elemento zero di x (cioè x[0])?
+    Provaci.
+  CorrectAnswer: x[0]
+  AnswerTests: omnitest(correctExpr='x[0]')
+  Hint: Prova x[0] per vedere cosa succede quando ci riferiamo all'elemento zero di
+    un vettore, che non è definito in R.
+- Class: cmd_question
+  Output: Come ci si potrebbe aspettare, non otteniamo nulla di utile. Sfortunatamente,
+    R non ci impedisce di farlo. E se chiedessimo il 3000esimo elemento di x? Provalo.
+  CorrectAnswer: x[3000]
+  AnswerTests: omnitest(correctExpr='x[3000]')
+  Hint: Richiedi il 3000esimo elemento di x (che non esiste) con x[3000].
+- Class: text
+  Output: Ancora una volta, niente di utile, ma R non ci impedisce di chiederlo. Questo
+    dovrebbe essere un ammonimento. Dovresti sempre assicurarti che ciò che stai chiedendo
+    rientri nei limiti del vettore con cui stai lavorando.
+- Class: text
+  Output: E se fossimo interessati a tutti gli elementi di x TRANNE il 2° e il 10°?
+    Sarebbe piuttosto noioso costruire un vettore contenente tutti i numeri da 1 a
+    40 TRANNE 2 e 10.
+- Class: cmd_question
+  Output: Fortunatamente, R accetta indici interi negativi. Mentre x[c(2, 10)] ci
+    dà SOLO il 2° e il 10° elemento di x, x[c(-2, -10)] ci dà tutti gli elementi di
+    x TRANNE il 2° e il 10° elemento. Prova x[c(-2, -10)] ora per vedere questo.
+  CorrectAnswer: x[c(-2, -10)]
+  AnswerTests: omnitest(correctExpr='x[c(-2, -10)]')
+  Hint: Prova x[c(-2, -10)].
+- Class: cmd_question
+  Output: Un modo abbreviato per specificare più numeri negativi è mettere il segno
+    negativo davanti al vettore di numeri positivi. Digita x[-c(2, 10)] per ottenere
+    esattamente lo stesso risultato.
+  CorrectAnswer: x[-c(2, 10)]
+  AnswerTests: omnitest(correctExpr='x[-c(2, 10)]')
+  Hint: Usa x[-c(2, 10)] per semplificare un po' le cose. Questo potrebbe far risparmiare
+    tempo se si specificano molti indici negativi.
+- Class: text
+  Output: 'Finora, abbiamo trattato tre tipi di vettori indice: logici, interi positivi
+    e interi negativi. L''unico tipo rimanente ci richiede di introdurre il concetto
+    di elementi ''denominati''.'
+- Class: cmd_question
+  Output: Creare un vettore numerico con tre elementi denominati utilizzando vect
+    <- c(foo = 11, bar = 2, norf = NA).
+  CorrectAnswer: vect <- c(foo = 11, bar = 2, norf = NA)
+  AnswerTests: omnitest(correctExpr='vect <- c(foo = 11, bar = 2, norf = NA)')
+  Hint: Crea un vettore denominato con vect <- c(foo = 11, bar = 2, norf = NA).
+- Class: cmd_question
+  Output: Quando stampiamo vect sulla console, vedrai che ogni elemento ha un nome.
+    Provalo.
+  CorrectAnswer: vect
+  AnswerTests: omnitest(correctExpr='vect')
+  Hint: Digita vect per visualizzarne il contenuto.
+- Class: cmd_question
+  Output: Possiamo anche ottenere i nomi di vect passando vect come argomento alla
+    funzione names(). Fai un tentativo.
+  CorrectAnswer: names(vect)
+  AnswerTests: omnitest(correctExpr='names(vect)')
+  Hint: Controlla i risultati dei nomi (vect).
+- Class: cmd_question
+  Output: In alternativa, possiamo creare un vettore senza nome vect2 con c(11, 2,
+    NA). Fallo ora.
+  CorrectAnswer: vect2 <- c(11, 2, NA)
+  AnswerTests: omnitest(correctExpr='vect2 <- c(11, 2, NA)')
+  Hint: Crea un vettore ordinario (senza nome) chiamato vect2 che contiene c(11, 2,
+    NA).
+- Class: cmd_question
+  Output: Quindi, possiamo aggiungere l'attributo `names` a vect2 dopo il fatto con
+    names(vect2) <- c("foo", "bar", "norf"). Andare avanti.
+  CorrectAnswer: names(vect2) <- c("foo", "bar", "norf")
+  AnswerTests: omnitest(correctExpr='names(vect2) <- c("foo", "bar", "norf")')
+  Hint: Aggiungi nomi a vect2 con names(vect2) <- c("foo", "bar", "norf").
+- Class: cmd_question
+  Output: Ora, controlliamo che vect e vect2 siano uguali passandoli come argomenti
+    alla funzione identical().
+  CorrectAnswer: identical(vect, vect2)
+  AnswerTests: any_of_exprs('identical(vect, vect2)', 'identical(vect2, vect)')
+  Hint: La funzione identical() ci dice se i suoi primi due argomenti sono, beh, identici.
+- Class: text
+  Output: Infatti, vect e vect2 sono vettori denominati identici.
+- Class: mult_question
+  Output: Torniamo ora alla questione del sottoinsieme di un vettore mediante elementi
+    con nome. Quale dei seguenti comandi pensi che ci darebbe il secondo elemento
+    di vect?
+  AnswerChoices: vect["bar"]; vect[bar]; vect["2"]
+  CorrectAnswer: vect["bar"]
+  AnswerTests: omnitest(correctVal='vect["bar"]')
+  Hint: Se vogliamo l'elemento denominato "bar" (ovvero il secondo elemento di vect),
+    quale comando ci darebbe questo?
+- Class: cmd_question
+  Output: Ora, provalo.
+  CorrectAnswer: vect["bar"]
+  AnswerTests: omnitest(correctExpr='vect["bar"]')
+  Hint: Prova vect["barra"].
+- Class: cmd_question
+  Output: Allo stesso modo, possiamo specificare un vettore di nomi con vect[c("foo",
+    "bar")]. Provalo.
+  CorrectAnswer: vect[c("foo", "bar")]
+  AnswerTests: omnitest(correctExpr='vect[c("foo", "bar")]')
+  Hint: Usa vect[c("foo", "bar")] per ottenere solo gli elementi di vect denominati
+    "foo" e "bar".
+- Class: text
+  Output: Ora conosci tutti e quattro i metodi di sottoinsieme dei dati dai vettori.
+    Approcci diversi sono i migliori in scenari diversi e, in caso di dubbio, provalo!
+- Class: mult_question
+  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+    via e-mail?
+  CorrectAnswer: ~
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: ~
