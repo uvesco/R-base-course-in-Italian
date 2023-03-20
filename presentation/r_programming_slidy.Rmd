@@ -1,0 +1,93 @@
+---
+title: "Elementi del linguaggio R"
+author: "Umberto Vesco"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Swirl
+
+![](img/swirl_new_large_final.png){width="401"}
+
+Pacchetto per imparare R utilizzando R.
+
+Inserire un **nome utente** ([ricordarlo]{.underline} per riprendere da dove si è interrotto in caso di blocco).
+
+Prima di iniziare alcune istruzioni per muoversi agevolmente nella lezione:
+
+quando si vede `'…'`, significa che una volta terminato di leggere si deve premere il tasto invio per passare oltre.
+
+## Swirl/2
+
+Quando ci sono le risposte multiple:
+
+1.  Continue.
+2.  Proceed.
+3.  Let's get going!
+
+Bisogna digitare il numero della risposta corretta e invio.
+
+## Swirl/3
+
+Uscire da swirl sempre e tornare al prompt di R (\>): tasto **Esc**
+
+Quando sei al prompt di R (\>):
+
+-   `skip()` ti permette di saltare la domanda corrente.
+
+-   `play()` ti consente di sperimentare R autonomamente; swirl ignorerà ciò che fai\...
+
+-   FINO a quando non digiti `nxt()`, che riattirerà l'attenzione di swirl.
+
+-   Digitando `bye()` farà uscire swirl. I tuoi progressi verranno salvati.
+
+-   Digitando `main()` ti riporterà al menu principale di swirl.
+
+-   Digitando `info()` visualizzerai nuovamente queste opzioni.
+
+## R come una calcolatrice, assegnare valori agli oggetti
+
+Scrivete il codice per sommare 5 a 7.
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+## Per scrivere il codice nota bene:
+
+-   R è case sensitive: c() non è uguale a C()
+
+-   il separatore decimale è il punto
+
+-   la virgola serve per separare gli argomenti delle funzioni
+
+-   esistono norme per rendere il codice più leggibile e ordinato, ma sono scelte personali
+
+## I vettori
+
+Sono una sequenza di valori con una determinata lunghezza.
+
+Il modo più semplice per crearne uno è la funzione `c()`
+
+Notate che la funzione è un oggetto che si esegue inserendo degli oggetti nelle parentesi tonde che ne seguono il nome.
+
+## Operazioni sui vettori
+
+`my_sqrt <- sqrt(z - 1)`
+
+In questo caso, R ha calcolato la radice quadrata di ogni elemento del
+vettore z - 1. Quindi, la variabile my_sqrt conterrà un vettore con le
+radici quadrate dei singoli elementi del vettore z - 1. Le operazioni
+vettoriali in R sono molto utili perché consentono di applicare
+facilmente funzioni e operazioni matematiche a interi vettori senza
+dover utilizzare cicli o altre strutture di controllo.
+
+```{r pressure}
+plot(pressure)
+```
