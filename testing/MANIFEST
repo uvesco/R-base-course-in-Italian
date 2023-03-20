@@ -1,0 +1,15 @@
+Elementi_di_base_del_linguaggio -> completo (ridotto)
+Spazio_di_lavoro_e_Files -> ridurre
+Sequences_of_Numbers -> completo
+Vectors -> completo (ridurre un po')
+Missing_Values -> completo
+Subsetting_Vectors -> completo
+Matrices_and_Data_Frames -> completo
+Logic -> accorciare
+Functions -> accorciare
+lapply_and_sapply -> sostituire con for o fare la prima parte o tutto? decidere
+vapply_and_tapply -> sicuramente tapply, vapply anche no, c'è table in inizio tapply
+Looking_at_Data --> forse potrebbe stare molto prima (prima di functions), aggiungere discorso su tibble
+Simulation -> interessante ma eccessiva
+Dates_and_Times -> ridurre, anticipare prima di logic?
+Base_Graphics -> troppo poco

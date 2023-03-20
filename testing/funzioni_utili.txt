@@ -1,0 +1,25 @@
+range
+max
+min
+
+apply
+for
+while
+if else
+
+unique
+
+str
+summary
+
+table (c'è in tapply)
+
+
+dove sono importare i dati???
+View in guardare i dati
+
+fattori
+
+dput
+
+alt+126 per la tilde in windows
