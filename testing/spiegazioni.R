@@ -4,6 +4,10 @@
 # una volta spiegazione interattiva
 # esercizi riassuntivi
 
+# installiamo e presentazione di Livilla
+
+# presentazione di Swirl
+
 
 # 1 Elementi di base del linguaggio ----
 
@@ -243,6 +247,9 @@ plot(women)
 #xlab ylab
 #main
 # xlim ylim
+# colori
+# tipi linee
+# tipi punti
 data("Nile")
 
 # spiegazione 14.1 ----
@@ -250,14 +257,23 @@ data("Nile")
 plot(Nile)
 barplot(GNP ~ Year, data = longley)
 hline()
-boxplot(iris) o regine
+boxplot(iris) #o regine
 par(mfrow=c(2,2))
 par(mfrow=c(1,1))
+# legende
+# torte (regine per linea, con colori
+# esportare i grafici
+
 
 #ciclo for e png
 #creare istogrammi per ogni tipo di iris
 
+)
 
+# esercizi
 
-
+# presentazione con fonti per studiare
+#roger peng coursera
+# datacamp.com
+# manuali: springer
 
