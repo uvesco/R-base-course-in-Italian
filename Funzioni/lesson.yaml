@@ -131,19 +131,19 @@
   Hint: 'L''ordine non ha più importanza quando dichiari esplicitamente i valori degli
     argomenti! Prova questo digitando: remainder(divisor = 11, num = 5)'
 - Class: text
-  Output: Come puoi vedere, c'è una differenza significativa tra remainder(11, 5) e remainder(divisore
+  Output: Come puoi vedere, c'è una differenza significativa tra remainder(11, 5) e remainder(divisor
     = 11, num = 5)!
-- Class: cmd_question
-  Output: R può anche abbinare parzialmente gli argomenti. Prova a digitare remainder(4,
-    div = 2) per vedere questa caratteristica in azione.
-  CorrectAnswer: remainder(4, div = 2)
-  AnswerTests: omnitest(correctExpr='remainder(4, div = 2)')
-  Hint: 'Prova la corrispondenza parziale digitando: remainder(4, div = 2)'
-- Class: text
-  Output: 'Un avvertimento: in generale si vuole rendere il proprio codice il più facile da
-    capire possibile. Cambiare l''ordine degli argomenti specificandone i nomi o utilizzando
-    solo nomi di argomenti parziali può creare confusione, quindi usa queste caratteristica
-    con cautela!'
+# - Class: cmd_question
+#   Output: R può anche abbinare parzialmente gli argomenti. Prova a digitare remainder(4,
+#     div = 2) per vedere questa caratteristica in azione.
+#   CorrectAnswer: remainder(4, div = 2)
+#   AnswerTests: omnitest(correctExpr='remainder(4, div = 2)')
+#   Hint: 'Prova la corrispondenza parziale digitando: remainder(4, div = 2)'
+# - Class: text
+#   Output: 'Un avvertimento: in generale si vuole rendere il proprio codice il più facile da
+#     capire possibile. Cambiare l''ordine degli argomenti specificandone i nomi o utilizzando
+#     solo nomi di argomenti parziali può creare confusione, quindi usa queste caratteristica
+#     con cautela!'
 - Class: cmd_question
   Output: 'Con tutto questo parlare di argomenti, potresti chiederti se c''è un modo
     per vedere gli argomenti di una funzione (oltre a guardare la documentazione).
@@ -212,80 +212,80 @@
     Ricorda che la tua funzione anonima dovrebbe avere un solo argomento e quell'argomento
     dovrebbe essere chiamato "x". L'uso della funzione length() nella tua funzione
     anonima potrebbe aiutarti.
-- Class: cmd_question
-  Output: Per il resto del corso useremo frequentemente la funzione paste(). Digita
-    ?paste così possiamo dare un'occhiata alla documentazione per la funzione paste.
-  CorrectAnswer: ?paste
-  AnswerTests: omnitest(correctExpr='?paste')
-  Hint: 'Basta digitare: ?paste'
-- Class: text
-  Output: Come puoi vedere, il primo argomento di paste() è `...` che viene indicato
-    come puntini di sospensione o semplicemente punto-punto-punto. I puntini di sospensione
-    consentono di passare a una funzione un numero indefinito di argomenti. Nel caso
-    di paste() qualsiasi numero di stringhe può essere passato come argomenti e paste()
-    restituirà tutte le stringhe combinate in una stringa.
-- Class: cmd_question
-  Output: Solo per vedere come funziona paste(), digita paste("Programmare", "è",
-    "divertente!")
-  CorrectAnswer: paste("Programmare", "è", "divertente!")
-  AnswerTests: omnitest(correctExpr='paste("Programmare", "è", "divertente!")')
-  Hint: 'Basta digitare: paste("Programmare", "è", "divertente!")'
-- Class: text
-  Output: È ora di scrivere la nostra versione modificata di paste().
-- Class: script
-  Output: Assicurati di salvare lo script prima di digitare submit().
-  AnswerTests: test_func5()
-  Hint: Ricorda che gli argomenti possono venire dopo...
-  Script: telegram.R
-- Class: cmd_question
-  Output: Ora testiamo la tua funzione telegram. Usa la tua nuova funzione di telegram
-    passando gli argomenti che desideri!
-  CorrectAnswer: telegram()
-  AnswerTests: expr_uses_func('telegram')
-  Hint: Usa la funzione telegram con qualsiasi argomento tu voglia usare.
-- Class: script
-  Output: Assicurati di salvare lo script prima di digitare submit().
-  AnswerTests: test_func6()
-  Hint: 'La tua funzione dovrebbe avere tre sezioni: catturare i puntini di sospensione
-    in una lista (), decomprimere gli argomenti dai puntini di sospensione e assegnarli
-    alle variabili, quindi passare quelle variabili a paste ().'
-  Script: mad_libs.R
-- Class: cmd_question
-  Output: È ora di usare la tua funzione mad_libs. Assicurati di nominare il luogo,
-    l'aggettivo e gli argomenti del nome affinché la tua funzione lavori.
-  CorrectAnswer: mad_libs(adjective = "", place = "", noun = "")
-  AnswerTests: expr_uses_func('mad_libs')
-  Hint: Usa la funzione mad_libs e assicurati di nominare gli argomenti luogo, aggettivo
-    e nome.
-- Class: text
-  Output: Stiamo arrivando alla fine di questa lezione, ma c'è ancora un concetto di cui
-    dovresti essere a conoscenza.
-- Class: text
-  Output: Hai familiarità con l'addizione, la sottrazione, la moltiplicazione e la
-    divisione dei numeri in R. Per fare questo usi i simboli +, -, * e /. Questi simboli
-    sono chiamati operatori binari perché accettano due input, uno da sinistra e uno
-    da destra.
-- Class: text
-  Output: In R puoi definire i tuoi operatori binari. Nel prossimo script
-    ti mostrerò come.
-- Class: script
-  Output: Assicurati di salvare lo script prima di digitare submit().
-  AnswerTests: test_func7()
-  Hint: 'Ricorda: ''Ciao'' %p% ''studente!'' è come si usa l''operatore binario.'
-  Script: bin_op.R
-- Class: cmd_question
-  Output: 'Hai creato il tuo operatore binario! Proviamolo. Incolla insieme le stringhe:
-    ''I'', ''love'', ''R!'' usando il tuo nuovo operatore binario.'
-  CorrectAnswer: '''I'' %p% ''love'' %p% ''R!'''
-  AnswerTests: omnitest(correctExpr="'I' %p% 'love' %p% 'R!'")
-  Hint: Usa %p% tra ogni stringa.
-- Class: text
-  Output: Siamo giunti alla fine della nostra lezione! Vai là fuori e scrivi delle
-    funzioni fantastiche!
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: cmd_question
+#   Output: Per il resto del corso useremo frequentemente la funzione paste(). Digita
+#     ?paste così possiamo dare un'occhiata alla documentazione per la funzione paste.
+#   CorrectAnswer: ?paste
+#   AnswerTests: omnitest(correctExpr='?paste')
+#   Hint: 'Basta digitare: ?paste'
+# - Class: text
+#   Output: Come puoi vedere, il primo argomento di paste() è `...` che viene indicato
+#     come puntini di sospensione o semplicemente punto-punto-punto. I puntini di sospensione
+#     consentono di passare a una funzione un numero indefinito di argomenti. Nel caso
+#     di paste() qualsiasi numero di stringhe può essere passato come argomenti e paste()
+#     restituirà tutte le stringhe combinate in una stringa.
+# - Class: cmd_question
+#   Output: Solo per vedere come funziona paste(), digita paste("Programmare", "è",
+#     "divertente!")
+#   CorrectAnswer: paste("Programmare", "è", "divertente!")
+#   AnswerTests: omnitest(correctExpr='paste("Programmare", "è", "divertente!")')
+#   Hint: 'Basta digitare: paste("Programmare", "è", "divertente!")'
+# - Class: text
+#   Output: È ora di scrivere la nostra versione modificata di paste().
+# - Class: script
+#   Output: Assicurati di salvare lo script prima di digitare submit().
+#   AnswerTests: test_func5()
+#   Hint: Ricorda che gli argomenti possono venire dopo...
+#   Script: telegram.R
+# - Class: cmd_question
+#   Output: Ora testiamo la tua funzione telegram. Usa la tua nuova funzione di telegram
+#     passando gli argomenti che desideri!
+#   CorrectAnswer: telegram()
+#   AnswerTests: expr_uses_func('telegram')
+#   Hint: Usa la funzione telegram con qualsiasi argomento tu voglia usare.
+# - Class: script
+#   Output: Assicurati di salvare lo script prima di digitare submit().
+#   AnswerTests: test_func6()
+#   Hint: 'La tua funzione dovrebbe avere tre sezioni: catturare i puntini di sospensione
+#     in una lista (), decomprimere gli argomenti dai puntini di sospensione e assegnarli
+#     alle variabili, quindi passare quelle variabili a paste ().'
+#   Script: mad_libs.R
+# - Class: cmd_question
+#   Output: È ora di usare la tua funzione mad_libs. Assicurati di nominare il luogo,
+#     l'aggettivo e gli argomenti del nome affinché la tua funzione lavori.
+#   CorrectAnswer: mad_libs(adjective = "", place = "", noun = "")
+#   AnswerTests: expr_uses_func('mad_libs')
+#   Hint: Usa la funzione mad_libs e assicurati di nominare gli argomenti luogo, aggettivo
+#     e nome.
+# - Class: text
+#   Output: Stiamo arrivando alla fine di questa lezione, ma c'è ancora un concetto di cui
+#     dovresti essere a conoscenza.
+# - Class: text
+#   Output: Hai familiarità con l'addizione, la sottrazione, la moltiplicazione e la
+#     divisione dei numeri in R. Per fare questo usi i simboli +, -, * e /. Questi simboli
+#     sono chiamati operatori binari perché accettano due input, uno da sinistra e uno
+#     da destra.
+# - Class: text
+#   Output: In R puoi definire i tuoi operatori binari. Nel prossimo script
+#     ti mostrerò come.
+# - Class: script
+#   Output: Assicurati di salvare lo script prima di digitare submit().
+#   AnswerTests: test_func7()
+#   Hint: 'Ricorda: ''Ciao'' %p% ''studente!'' è come si usa l''operatore binario.'
+#   Script: bin_op.R
+# - Class: cmd_question
+#   Output: 'Hai creato il tuo operatore binario! Proviamolo. Incolla insieme le stringhe:
+#     ''I'', ''love'', ''R!'' usando il tuo nuovo operatore binario.'
+#   CorrectAnswer: '''I'' %p% ''love'' %p% ''R!'''
+#   AnswerTests: omnitest(correctExpr="'I' %p% 'love' %p% 'R!'")
+#   Hint: Usa %p% tra ogni stringa.
+# - Class: text
+#   Output: Siamo giunti alla fine della nostra lezione! Vai là fuori e scrivi delle
+#     funzioni fantastiche!
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

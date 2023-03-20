@@ -121,44 +121,44 @@
   CorrectAnswer: t2$min
   AnswerTests: omnitest(correctExpr='t2$min')
   Hint: t2$min ti darà il numero di minuti dal tempo memorizzato in t2.
-- Class: text
-  Output: 'Ora che abbiamo esplorato tutti e tre i tipi di oggetti data e ora, diamo
-    un''occhiata ad alcune funzioni che estraggono informazioni utili da ciascuno
-    di questi oggetti: weekdays(), months() e quarters().'
-- Class: cmd_question
-  Output: La funzione weekdays() restituirà il giorno della settimana da qualsiasi
-    oggetto data e ora. Provalo su d1, che è l'oggetto data che contiene la data odierna.
-  CorrectAnswer: weekdays(d1)
-  AnswerTests: omnitest(correctExpr='weekdays(d1)')
-  Hint: Prova weekdays(d1) per ottenere il giorno della settimana.
-- Class: cmd_question
-  Output: La funzione months() funziona anche su qualsiasi oggetto data o ora. Provalo
-    su t1, che è l'oggetto POSIXct che contiene l'ora corrente (beh, era l'ora corrente
-    quando l'hai creata).
-  CorrectAnswer: months(t1)
-  AnswerTests: omnitest(correctExpr='months(t1)')
-  Hint: months(t1) ti darà il mese corrente.
-- Class: cmd_question
-  Output: La funzione quarters() restituisce il trimestre dell'anno (Q1-Q4) da qualsiasi
-    oggetto data o ora. Provalo su t2, che è l'oggetto POSIXlt che contiene l'ora
-    in cui l'hai creato.
-  CorrectAnswer: quarters(t2)
-  AnswerTests: omnitest(correctExpr='quarters(t2)')
-  Hint: quarters(t2) ti darà il trimestre corrente.
-- Class: text
-  Output: Spesso, le date e le ore in un set di dati saranno in un formato che R non
-    riconosce. La funzione strptime() può essere utile in questa situazione.
-- Class: text
-  Output: strptime() converte i vettori di caratteri in POSIXlt. In questo senso,
-    è simile a as.POSIXlt(), tranne per il fatto che l'input non deve essere in un
-    formato particolare (AAAA-MM-GG).
-- Class: cmd_question
-  Output: 'Per vedere come funziona, memorizza la seguente stringa di caratteri in
-    una variabile chiamata t3: "October 17, 1986 08:24" (con le virgolette).'
-  CorrectAnswer: t3 <- "October 17, 1986 08:24"
-  AnswerTests: omnitest(correctExpr='t3 <- "October 17, 1986 08:24"')
-  Hint: Memorizza "October 17, 1986 08:24" (comprese le virgolette) in una nuova variabile
-    chiamata t3.
+# - Class: text
+#   Output: 'Ora che abbiamo esplorato tutti e tre i tipi di oggetti data e ora, diamo
+#     un''occhiata ad alcune funzioni che estraggono informazioni utili da ciascuno
+#     di questi oggetti: weekdays(), months() e quarters().'
+# - Class: cmd_question
+#   Output: La funzione weekdays() restituirà il giorno della settimana da qualsiasi
+#     oggetto data e ora. Provalo su d1, che è l'oggetto data che contiene la data odierna.
+#   CorrectAnswer: weekdays(d1)
+#   AnswerTests: omnitest(correctExpr='weekdays(d1)')
+#   Hint: Prova weekdays(d1) per ottenere il giorno della settimana.
+# - Class: cmd_question
+#   Output: La funzione months() funziona anche su qualsiasi oggetto data o ora. Provalo
+#     su t1, che è l'oggetto POSIXct che contiene l'ora corrente (beh, era l'ora corrente
+#     quando l'hai creata).
+#   CorrectAnswer: months(t1)
+#   AnswerTests: omnitest(correctExpr='months(t1)')
+#   Hint: months(t1) ti darà il mese corrente.
+# - Class: cmd_question
+#   Output: La funzione quarters() restituisce il trimestre dell'anno (Q1-Q4) da qualsiasi
+#     oggetto data o ora. Provalo su t2, che è l'oggetto POSIXlt che contiene l'ora
+#     in cui l'hai creato.
+#   CorrectAnswer: quarters(t2)
+#   AnswerTests: omnitest(correctExpr='quarters(t2)')
+#   Hint: quarters(t2) ti darà il trimestre corrente.
+# - Class: text
+#   Output: Spesso, le date e le ore in un set di dati saranno in un formato che R non
+#     riconosce. La funzione strptime() può essere utile in questa situazione.
+# - Class: text
+#   Output: strptime() converte i vettori di caratteri in POSIXlt. In questo senso,
+#     è simile a as.POSIXlt(), tranne per il fatto che l'input non deve essere in un
+#     formato particolare (AAAA-MM-GG).
+# - Class: cmd_question
+#   Output: 'Per vedere come funziona, memorizza la seguente stringa di caratteri in
+#     una variabile chiamata t3: "October 17, 1986 08:24" (con le virgolette).'
+#   CorrectAnswer: t3 <- "October 17, 1986 08:24"
+#   AnswerTests: omnitest(correctExpr='t3 <- "October 17, 1986 08:24"')
+#   Hint: Memorizza "October 17, 1986 08:24" (comprese le virgolette) in una nuova variabile
+#     chiamata t3.
 - Class: cmd_question
   Output: Ora, usa strptime(t3, "%B %d, %Y %H:%M") per aiutare R a convertire il nostro
     oggetto data/ora in un formato comprensibile. Assegna il risultato a una nuova
@@ -197,26 +197,26 @@
   CorrectAnswer: Sys.time() - t1
   AnswerTests: omnitest(correctExpr='Sys.time() - t1')
   Hint: Sys.time() - t1 ti darà il tempo trascorso dalla creazione di t1.
-- Class: text
-  Output: La stessa linea di pensiero si applica all'addizione e agli altri operatori
-    di confronto. Se vuoi un maggiore controllo sulle unità quando trovi la suddetta
-    differenza di tempo, puoi usare difftime(), che ti permette di specificare un
-    parametro 'unità'.
-- Class: cmd_question
-  Output: Usa difftime(Sys.time(), t1, units = 'days') per trovare la quantità di
-    tempo in DAYS che è trascorsa da quando hai creato t1.
-  CorrectAnswer: difftime(Sys.time(), t1, units = 'days')
-  AnswerTests: match_call("difftime(Sys.time(), t1, units = 'days')")
-  Hint: difftime(Sys.time(), t1, units = 'days') ti dirà quanti giorni sono passati
-    da quando t1 è stato creato (che è meglio che sia minore di 1!)
+# - Class: text
+#   Output: La stessa linea di pensiero si applica all'addizione e agli altri operatori
+#     di confronto. Se vuoi un maggiore controllo sulle unità quando trovi la suddetta
+#     differenza di tempo, puoi usare difftime(), che ti permette di specificare un
+#     parametro 'unità'.
+# - Class: cmd_question
+#   Output: Usa difftime(Sys.time(), t1, units = 'days') per trovare la quantità di
+#     tempo in DAYS che è trascorsa da quando hai creato t1.
+#   CorrectAnswer: difftime(Sys.time(), t1, units = 'days')
+#   AnswerTests: match_call("difftime(Sys.time(), t1, units = 'days')")
+#   Hint: difftime(Sys.time(), t1, units = 'days') ti dirà quanti giorni sono passati
+#     da quando t1 è stato creato (che è meglio che sia minore di 1!)
 - Class: text
   Output: In questa lezione hai imparato a lavorare con date e ore in R. Sebbene sia
     importante comprendere le basi, se ti ritrovi a lavorare spesso con date e ore,
     potresti voler dare un'occhiata al pacchetto lubridate di Hadley Wickham.
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

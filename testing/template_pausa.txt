@@ -1,0 +1,11 @@
+
+- Class: cmd_question
+  Output: 'Spiegazione 03: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
+- Class: text
+  Output: PAUSA 03
+  

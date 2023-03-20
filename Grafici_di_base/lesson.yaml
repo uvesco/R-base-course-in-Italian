@@ -177,6 +177,10 @@
 - Class: text
   Output: È, tuttavia, utile avere un'introduzione alla grafica di base perché molta
     della terminologia in lattice e ggplot2 si basano su di essi.
+
+- Class: text
+  Output: Spiegazione 14.1
+
 - Class: text
   Output: Diamo ora un'occhiata ad alcune altre funzioni nella grafica di base che
     possono essere utili, a partire dai boxplot.
@@ -229,13 +233,13 @@
   Hint: Digita hist(mtcars$mpg) per creare il grafico.
 - Class: text
   Output: In questa lezione, hai imparato a lavorare con la grafica di base in R.
-    Adesso l'opzione migliore è studiare studiare anche il pacchetto ggplot2. Se vuoi
+    Adesso l'opzione migliore è studiare anche il pacchetto ggplot2. Se vuoi
     esplorare altri elementi della grafica di base, allora questa pagina web (http://www.ling.upenn.edu/~joseff/rstudy/week4.html)
     fornisce una panoramica utile.
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

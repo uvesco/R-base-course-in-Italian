@@ -6,10 +6,10 @@ Valori_mancanti
 Subset_di_Vettori
 Matrici_e_Data_Frames
 Logica
-Funzioni
-lapply_e_sapply
-vapply_e_tapply
 Guardare_i_Dati
-Simulazioni
+Funzioni
+apply
+vapply_e_tapply
 Data_e_Ora
 Grafici_di_base
+Simulazioni

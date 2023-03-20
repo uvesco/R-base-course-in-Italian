@@ -323,10 +323,10 @@
   Output: Questo è tutto per questa introduzione alla logica in R. Se vuoi davvero
     vedere cosa puoi fare con la logica, dai un'occhiata alla lezione sul flusso di
     controllo!
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

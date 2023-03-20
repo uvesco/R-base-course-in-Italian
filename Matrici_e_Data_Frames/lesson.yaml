@@ -160,6 +160,10 @@
   Output: Questa si chiama 'coercizione implicita', perché non l'abbiamo richiesta
     noi. È appena successo. Ma perché R non ha semplicemente convertito i nomi dei
     nostri pazienti in numeri? Ti lascerò riflettere su questa domanda da solo.
+    
+- Class: text
+  Output: Spiegazione 7.1
+    
 - Class: cmd_question
   Output: Quindi, ci rimane ancora la questione di come includere i nomi dei nostri
     pazienti nella tabella senza distruggere l'integrità dei nostri dati numerici.
@@ -221,13 +225,13 @@
   Hint: Stampa il contenuto di my_data sulla console.
 - Class: text
   Output: 'In questa lezione hai appreso le basi per lavorare con due strutture dati
-    molto importanti e comuni: matrici e frame di dati. C''è molto altro da imparare
+    molto importanti e comuni: matrici e data.frame . C''è molto altro da imparare
     e tratteremo argomenti più avanzati, in particolare per quanto riguarda i frame
     di dati, nelle lezioni future.'
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

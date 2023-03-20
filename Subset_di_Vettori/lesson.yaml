@@ -106,6 +106,10 @@
 - Class: text
   Output: In questo caso, richiediamo solo valori di x che siano entrambi non mancanti
     E maggiori di zero.
+    
+- Class: text
+  Output: SPIEGAZIONE 6.1 
+  
 - Class: text
   Output: Ti ho già mostrato come creare un sottoinsieme solo dei primi dieci valori
     di x usando x[1:10]. In questo caso, stiamo fornendo un vettore di numeri interi
@@ -143,6 +147,10 @@
   Output: Ancora una volta, niente di utile, ma R non ci impedisce di chiederlo. Questo
     dovrebbe essere un ammonimento. Dovresti sempre assicurarti che ciò che stai chiedendo
     rientri nei limiti del vettore con cui stai lavorando.
+    
+- Class: text
+  Output: SPIEGAZIONE 6.2
+
 - Class: text
   Output: E se fossimo interessati a tutti gli elementi di x TRANNE il 2° e il 10°?
     Sarebbe piuttosto noioso costruire un vettore contenente tutti i numeri da 1 a
@@ -162,6 +170,10 @@
   AnswerTests: omnitest(correctExpr='x[-c(2, 10)]')
   Hint: Usa x[-c(2, 10)] per semplificare un po' le cose. Questo potrebbe far risparmiare
     tempo se si specificano molti indici negativi.
+
+- Class: text
+  Output: SPIEGAZIONE 6.3
+    
 - Class: text
   Output: 'Finora, abbiamo trattato tre tipi di vettori indice: logici, interi positivi
     e interi negativi. L''unico tipo rimanente ci richiede di introdurre il concetto
@@ -229,10 +241,10 @@
 - Class: text
   Output: Ora conosci tutti e quattro i metodi di sottoinsieme dei dati dai vettori.
     Approcci diversi sono i migliori in scenari diversi e, in caso di dubbio, provalo!
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

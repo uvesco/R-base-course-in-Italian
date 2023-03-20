@@ -211,10 +211,10 @@
   Output: La simulazione è praticamente un campo a sé stante e abbiamo solo sfiorato
     la superficie di ciò che è possibile. Ti incoraggio a esplorare ulteriormente
     queste e altre funzioni per conto tuo.
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

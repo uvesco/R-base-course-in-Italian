@@ -310,10 +310,10 @@
   Output: In questa lezione hai imparato come utilizzare le potenti funzioni lapply()
     e sapply() per applicare un'operazione sugli elementi di una lista. Nella prossima
     lezione, daremo uno sguardo ad alcuni parenti stretti di lapply() e sapply().
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

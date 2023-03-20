@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Swirl
 
-![](img/swirl_new_large_final.png){width="401"}
+![](./img/swirl_new_large_final.png){width="236"}
 
 Pacchetto per imparare R utilizzando R.
 
@@ -53,11 +53,23 @@ Quando sei al prompt di R (\>):
 
 ## R come una calcolatrice, assegnare valori agli oggetti
 
-Scrivete il codice per sommare 5 a 7.
+Scrivete il codice per sommare 25 a 33.
 
 ```{r two-plus-two, exercise=TRUE}
 
 ```
+
+## Prepariamo l'ambiente di lavoro
+
+`# installiamo il pacchetto swirl 3`
+
+`library(swirl)`
+
+`# installiamo il materiale swirl preparato per il corso dall'account github di Umberto Vesco`
+
+`install_course_github("uvesco", "R-base-course-in-Italian")`
+
+![](./img/Github_logo.png){width="216"}
 
 ## Per scrivere il codice nota bene:
 
@@ -81,12 +93,7 @@ Notate che la funzione è un oggetto che si esegue inserendo degli oggetti nelle
 
 `my_sqrt <- sqrt(z - 1)`
 
-In questo caso, R ha calcolato la radice quadrata di ogni elemento del
-vettore z - 1. Quindi, la variabile my_sqrt conterrà un vettore con le
-radici quadrate dei singoli elementi del vettore z - 1. Le operazioni
-vettoriali in R sono molto utili perché consentono di applicare
-facilmente funzioni e operazioni matematiche a interi vettori senza
-dover utilizzare cicli o altre strutture di controllo.
+In questo caso, R ha calcolato la radice quadrata di ogni elemento del vettore z - 1. Quindi, la variabile my_sqrt conterrà un vettore con le radici quadrate dei singoli elementi del vettore z - 1. Le operazioni vettoriali in R sono molto utili perché consentono di applicare facilmente funzioni e operazioni matematiche a interi vettori senza dover utilizzare cicli o altre strutture di controllo.
 
 ```{r pressure}
 plot(pressure)

@@ -152,10 +152,10 @@
     di un nuovo set di dati utilizzando una raccolta di funzioni semplici e utili.
     Prendersi il tempo per farlo in anticipo può farti risparmiare tempo e frustrazione
     in seguito nella tua analisi.
-- Class: mult_question
-  Output: Vuoi informare qualcuno del completamento con successo di questa lezione
-    via e-mail?
-  CorrectAnswer: ~
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: ~
+# - Class: mult_question
+#   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
+#     via e-mail?
+#   CorrectAnswer: ~
+#   AnswerChoices: Yes; No
+#   AnswerTests: notify()
+#   Hint: ~

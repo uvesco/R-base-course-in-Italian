@@ -1,0 +1,22 @@
+---
+title: "Elementi del linguaggio R"
+author: "Umberto Vesco"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Il primo script
+
+Lo script rende completamente **ripetibile** l'analisi:
+
+-   chiunque può comprendere e rieseguire tutti i passaggi
+
+-   è possibile riutilizzare il codice per eseguire la stessa analisi con dati diversi
+
+-   è possibile modificare solo un passaggio
+
+E' possibile **automatizzare** operazioni ripetitive
