@@ -4,7 +4,11 @@ importare dati da google sheet? https://www.digitalocean.com/community/tutorials
 
 linguaggio: imparare la sintassi e il vocabolario
 
+google con R iniziale
+
 rblogger
+
 
 esempi di utilizzo miei
 altro corso completo
+stackoverflow
