@@ -23,3 +23,13 @@ fattori
 dput
 
 alt+126 per la tilde in windows
+Per scrivere la tilde su Mac è sufficiente usare la combinazione di tasti ALT + 5 e in un attimo comparirà a schermo questo simbolo ~ .
+
+Apply
+Sort
+Order
+Margin table
+Analisi su dataset regine: lezione/esercizio da soli 
+
+
+

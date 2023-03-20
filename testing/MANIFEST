@@ -13,3 +13,18 @@ Looking_at_Data --> forse potrebbe stare molto prima (prima di functions), aggiu
 Simulation -> interessante ma eccessiva
 Dates_and_Times -> ridurre, anticipare prima di logic?
 Base_Graphics -> troppo poco
+
+
+Dunque:
+- nel pacchetto "funzioni" terrei solo fino alla media e sd
+-data e ora lo toglierei
+-grafici è molto semplice ma mi sembra ben comprensibile e valuterei eventualmente di inserire una lezione più ampia online
+-guardare i dati : perfetta, c'è solo un errore di traduzione alla riga 56 (manca la negazione)
+-logica : toglierei dalla riga 177 e snellirei i concetti AND e OR
+- matrici e dataframe: toglierei riga 142
+-sequenza di numeri: toglierei "pi" e forse anche al riga 88
+-simulazione: alla riga 47 lascerei il termine raplace per evitare confusione IT/EN; toglierei riga 77 e 169, forse toglierei anche la variabile binomiale riga 105
+- spazio di lavoro e files: toglierei da riga 174 in poi
+- subset di vettori: toglierei riga 102 legata a probabilità AND/OR
+-vettori: toglierei la riga 85 per non entrare in paste()
+- chiuderei senza inserire altri avendo gli esercizi
