@@ -5,6 +5,7 @@
 # esercizi riassuntivi
 
 # installiamo e presentazione di Livilla
+# 
 
 # presentazione di Swirl
 
@@ -281,8 +282,9 @@ par(mfrow=c(1,1))
 #asl
 
 # fonti per studiare --------
-#roger peng coursera
-# datacamp.com
+# roger peng coursera
+# https://www.coursera.org/learn/exploratory-data-analysis/home/week/1
+# www.datacamp.com
 # manuali: springer
 # learnr
 
