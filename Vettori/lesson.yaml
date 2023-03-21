@@ -22,7 +22,7 @@
     Questi valori sono generati come risultato di 'condizioni' logiche. Proviamo con
     alcune semplici condizioni.
 - Class: cmd_question
-  Output: Innanzitutto, crea un vettore numerico num_vect che contenga i valori 0,5,
+  Output: Innanzitutto, crea un vettore numerico num_vect che contenga i valori 0.5,
     55, -10 e 6.
   CorrectAnswer: num_vect <- c(0.5, 55, -10, 6)
   AnswerTests: omnitest(correctExpr='num_vect <- c(0.5, 55, -10, 6)')
