@@ -107,8 +107,15 @@
   Output: In questo caso, richiediamo solo valori di x che siano entrambi non mancanti
     E maggiori di zero.
     
+- Class: cmd_question
+  Output: 'Spiegazione 6.1: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: SPIEGAZIONE 6.1 
+  Output: PAUSA 6.1  
   
 - Class: text
   Output: Ti ho già mostrato come creare un sottoinsieme solo dei primi dieci valori
@@ -148,8 +155,16 @@
     dovrebbe essere un ammonimento. Dovresti sempre assicurarti che ciò che stai chiedendo
     rientri nei limiti del vettore con cui stai lavorando.
     
+- Class: cmd_question
+  Output: 'Spiegazione 6.2: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: SPIEGAZIONE 6.2
+  Output: PAUSA 6.2  
+
 
 - Class: text
   Output: E se fossimo interessati a tutti gli elementi di x TRANNE il 2° e il 10°?
@@ -171,9 +186,16 @@
   Hint: Usa x[-c(2, 10)] per semplificare un po' le cose. Questo potrebbe far risparmiare
     tempo se si specificano molti indici negativi.
 
+- Class: cmd_question
+  Output: 'Spiegazione 6.3: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: SPIEGAZIONE 6.3
-    
+  Output: PAUSA 6.3  
+
 - Class: text
   Output: 'Finora, abbiamo trattato tre tipi di vettori indice: logici, interi positivi
     e interi negativi. L''unico tipo rimanente ci richiede di introdurre il concetto

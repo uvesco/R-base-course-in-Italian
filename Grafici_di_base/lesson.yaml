@@ -178,8 +178,15 @@
   Output: È, tuttavia, utile avere un'introduzione alla grafica di base perché molta
     della terminologia in lattice e ggplot2 si basano su di essi.
 
+- Class: cmd_question
+  Output: 'Spiegazione 14.1: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: Spiegazione 14.1
+  Output: PAUSA 14.1  
 
 - Class: text
   Output: Diamo ora un'occhiata ad alcune altre funzioni nella grafica di base che

@@ -17,7 +17,8 @@
 # assegnazione (notare in environment)
 
 
-# 1.1 pausa 01 VETTORI ----
+# 1.1 pausa 01 VETTORI ---- 
+#16
 c()
 # riciclo vettore
 rep(1,10)
@@ -43,7 +44,7 @@ file.path()
 normalizePath()
 setwd()
 
-# 2.1 Spiegazione 1.3 ----
+# 2.1 Spiegazione 2.1 ----
 
 # Lo script rende completamente **ripetibile** l'analisi:
 # 
@@ -55,7 +56,8 @@ setwd()
 # 
 # E' possibile **automatizzare** operazioni ripetitive
 
-# scriviamo dei comandi nello script
+# scriviamo dei comandi nello script --- 
+# arrivano allo script
 
 #osserviamo: riquadro environment
 # prendersi il tempo per capire
@@ -265,15 +267,31 @@ par(mfrow=c(1,1))
 # esportare i grafici
 
 
-#ciclo for e png
+#ciclo for e png ------
 #creare istogrammi per ogni tipo di iris
 
-)
 
-# esercizi
 
-# presentazione con fonti per studiare
+# esercizi ---------
+
+
+#esempi di applicazioni -----
+#sito
+#cv
+#asl
+
+# fonti per studiare --------
 #roger peng coursera
 # datacamp.com
 # manuali: springer
+# learnr
+
+# trovare aiuto --------
+# google (R all'inizio)
+# rblogger
+# mailing list R (vintage)
+# chatGPT
+
+
+
 

@@ -72,8 +72,15 @@
     Altri operatori logici includono `>`, `<=`, `==` per l'uguaglianza esatta e `!=`
     per la disuguaglianza.
 
+- Class: cmd_question
+  Output: 'Spiegazione 4.1: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: SPIEGAZIONE 4.1 - Operatori booleani
+  Output: PAUSA 4.1  
 
 - Class: text
   Output: Se abbiamo due espressioni logiche, A e B, possiamo chiederci se almeno
@@ -117,8 +124,15 @@
     affermazioni logiche in R richiede pratica, ma i tuoi sforzi saranno premiati
     in futuro (ad es. con sottoinsiemi e strutture di controllo).
 
+- Class: cmd_question
+  Output: 'Spiegazione 4.2: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: SPIEGAZIONE 4.2    
+  Output: PAUSA 4.2  
     
     
 # - Class: text

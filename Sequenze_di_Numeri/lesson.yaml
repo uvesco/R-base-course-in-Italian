@@ -123,8 +123,16 @@
     per eseguire attività quando non ci sono opzioni migliori. Esploreremo la scrittura
     delle tue funzioni nelle lezioni future.
 
+- Class: cmd_question
+  Output: 'Spiegazione 3.1: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: PAUSA 3.1
+  Output: PAUSA 3.1  
+
     
 - Class: text
   Output: Un'altra funzione correlata alla creazione di sequenze di numeri è rep(),

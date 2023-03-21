@@ -161,8 +161,16 @@
     noi. È appena successo. Ma perché R non ha semplicemente convertito i nomi dei
     nostri pazienti in numeri? Ti lascerò riflettere su questa domanda da solo.
     
+- Class: cmd_question
+  Output: 'Spiegazione 7.1: Adesso sperimentiamo un po'' liberamente con play prima di imparare altri comandi.
+    Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+
 - Class: text
-  Output: Spiegazione 7.1
+  Output: PAUSA 7.1  
+
     
 - Class: cmd_question
   Output: Quindi, ci rimane ancora la questione di come includere i nomi dei nostri
