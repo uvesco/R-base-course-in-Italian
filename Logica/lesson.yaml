@@ -19,8 +19,8 @@
   Output: La creazione di espressioni logiche richiede operatori logici. Probabilmente
     hai familiarità con operatori aritmetici come `+`, `-`, `*` e `/`. Il primo operatore
     logico che discuteremo è l'operatore di uguaglianza, rappresentato da due segni
-    di uguale `==`. Usa l'operatore di uguaglianza qui sotto per scoprire se VERO
-    è uguale a VERO.
+    di uguale `==`. Usa l'operatore di uguaglianza qui sotto per scoprire se TRUE
+    è uguale a TRUE.
   CorrectAnswer: TRUE == TRUE
   AnswerTests: omnitest(correctExpr='TRUE == TRUE')
   Hint: Utilizzare l'operatore di uguaglianza e digitare TRUE == TRUE
@@ -86,7 +86,7 @@
 - Class: cmd_question
   Output: 'Per negare le espressioni booleane è possibile utilizzare l''operatore
     NOT. Un punto esclamativo `!` farà sì che !TRUE (diciamo: non vero) valuti FALSE
-    e !FALSE (diciamo: non falso) valuti VERO. Prova a utilizzare l''operatore NOT
+    e !FALSE (diciamo: non falso) valuti TRUE. Prova a utilizzare l''operatore NOT
     e l''operatore uguale per trovare l''opposto del fatto che 5 sia uguale a 7.'
   CorrectAnswer: '!5 == 7'
   AnswerTests: any_of_exprs('!5 == 7', '!(5 == 7)')
@@ -161,7 +161,7 @@
     TRUE | c(TRUE, FALSE, FALSE).
   CorrectAnswer: TRUE | c(TRUE, FALSE, FALSE)
   AnswerTests: omnitest(correctExpr='TRUE | c(TRUE, FALSE, FALSE)')
-  Hint: 'Prova l''operatore OR vettorializzato digitando: TRUE | c(VERO, FALSO, FALSO)'
+  Hint: 'Prova l''operatore OR vettorializzato digitando: TRUE | c(TRUE, FALSE, FALSE)'
 - Class: cmd_question
   Output: Ora proviamo la versione non vettorizzata dell'operatore OR. Digitare l'espressione
     TRUE || c(TRUE, FALSE, FALSE).

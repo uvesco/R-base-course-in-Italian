@@ -45,7 +45,7 @@
     creato.
 - Class: cmd_question
   Output: Ah! Questo è quello che volevamo. Ma cosa succede se diamo a my_vector un
-    attributo `dim`? Proviamolo. Digita dim(mio_vettore) <- c(4, 5).
+    attributo `dim`? Proviamolo. Digita dim(my_vector) <- c(4, 5).
   CorrectAnswer: dim(my_vector) <- c(4, 5)
   AnswerTests: omnitest(correctExpr='dim(my_vector) <- c(4, 5)')
   Hint: Digita dim(mio_vettore) <- c(4, 5) per assegnare a mio_vettore un attributo
@@ -108,7 +108,7 @@
     capire come creare una matrice contenente gli stessi numeri (1-20) e dimensioni
     (4 righe, 5 colonne) chiamando la funzione matrix(). Memorizza il risultato in
     una variabile chiamata my_matrix2.
-  CorrectAnswer: my_matrix2 <- matrix(1:20, nrow=4, ncol=5)
+  CorrectAnswer: my_matrix2 <- matrix(1:20, nrow=4, ncol=5, by.row=FALSE)
   AnswerTests: calculates_same_value('matrix(1:20, nrow=4, ncol=5)'); expr_creates_var('my_matrix2')
   Hint: 'Chiama la funzione matrix() con tre argomenti: 1:20, il numero di righe e
     il numero di colonne. Assicurati di specificare gli argomenti con i loro nomi
@@ -132,7 +132,7 @@
 - Class: cmd_question
   Output: 'Iniziamo creando un vettore di caratteri contenente i nomi dei nostri pazienti:
     Bill, Gina, Kelly e Sean. Ricorda che le virgolette doppie dicono a R che qualcosa
-    è una stringa di caratteri. Memorizza il risultato in una variabile chiamata pazienti.'
+    è una stringa di caratteri. Memorizza il risultato in una variabile chiamata patients.'
   CorrectAnswer: patients <- c("Bill", "Gina", "Kelly", "Sean")
   AnswerTests: omnitest(correctExpr='patients <- c("Bill", "Gina", "Kelly", "Sean")')
   Hint: Assicurati di scrivere in maiuscolo la prima lettera di ogni nome e di memorizzare

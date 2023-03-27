@@ -122,8 +122,7 @@
   CorrectAnswer: plot(x = cars$speed, y = cars$dist, xlab = "Velocità", ylab = "Distanza di arresto")
   AnswerTests: omnitest(correctExpr='plot(x = cars$speed, y = cars$dist, xlab = "Velocità",
     ylab = "Distanza di arresto")')
-  Hint: Digita plot(x = cars$speed, y = cars$dist, xlab = "Velocità", ylab = "Stopping
-    Distance") per creare il grafico.
+  Hint: Digita plot(x = cars$speed, y = cars$dist, xlab = "Velocità", ylab = "Distanza di arresto") per creare il grafico.
 - Class: text
   Output: Il motivo per cui plots(cars) funzionava all'inizio della lezione era che
     R era abbastanza intelligente da sapere che il primo elemento (cioè la prima colonna)
@@ -140,7 +139,7 @@
   AnswerTests: omnitest(correctExpr='plot(cars, main = "Mio grafico")')
   Hint: Digita plot(cars, main = "Mio grafico") per creare il grafico.
 - Class: cmd_question
-  Output: Plotta cars con un sottotitolo di "Sottotitolo del mio grafico".
+  Output: Plotta cars con un sottotitolo di "Sottotitolo del mio grafico", argomento "sub = ".
   CorrectAnswer: plot(cars, sub = "Sottotitolo del mio grafico")
   AnswerTests: omnitest(correctExpr='plot(cars, sub = "Sottotitolo del mio grafico")')
   Hint: Digita plot(cars, sub = "Sottotitolo del mio grafico") per creare la trama.

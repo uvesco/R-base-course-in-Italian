@@ -12,3 +12,5 @@ rblogger
 esempi di utilizzo miei
 altro corso completo
 stackoverflow
+
+merge()

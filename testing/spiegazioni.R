@@ -183,7 +183,7 @@ FALSE == TRUE
 which()
 # somministriamo tutto e vediamo come se la cavano
 
-# 9 Guardare_i_Dati ----
+# 9 Guardare_i_Dati ------
 # prima cosa da fare è cercare di farsi un'idea dei dati
 # importate i vostri dati con Excel oppure data(iris)
 
@@ -197,6 +197,8 @@ head()
 tail()
 names()
 summary()
+object.size()
+
 order()
 ?sort()
 #variabili carattere contro variabili categoriche factor
