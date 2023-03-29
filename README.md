@@ -14,4 +14,4 @@ swirl()
 
 ## Help
 
-Vedere http://swirlstats.com/, aprire una issue.
+Vedere http://swirlstats.com/, aprire una issue in caso di comportamenti anomali o testi migliorabili.
