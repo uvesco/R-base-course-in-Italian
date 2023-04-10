@@ -1,0 +1,161 @@
+- Class: meta
+  Course: R base course in Italian
+  Lesson: 02-Spazio di lavoro e Files
+  Author: David Kane
+  Type: Standard
+  Organization: Unaapi
+  Version: 3.0.0
+- Class: text
+  Output: In questa lezione imparerete a esaminare il vostro spazio di lavoro locale
+    in R e inizierete a esplorare la relazione tra lo spazio di lavoro e il file system
+    della vostra macchina.
+- Class: text
+  Output: Poiché i diversi sistemi operativi hanno convenzioni diverse per quanto
+    riguarda i percorsi dei file, i risultati di questi comandi possono variare da
+    una macchina all'altra.
+- Class: text
+  Output: Tuttavia, è importante notare che R fornisce un'API comune (un insieme comune
+    di comandi) per interagire con i file, in modo che il codice funzioni su diversi
+    tipi di computer.
+- Class: cmd_question
+  Output: Determinate quale directory la vostra sessione R sta usando come directory
+    di lavoro corrente usando getwd().
+  CorrectAnswer: getwd()
+  AnswerTests: omnitest(correctExpr='getwd()')
+  Hint: Digitare getwd() per determinare la directory di lavoro corrente.
+- Class: cmd_question
+  Output: Elencare tutti i file presenti nella cartella di lavoro utilizzando list.files()
+    o dir().
+  CorrectAnswer: list.files()
+  AnswerTests: any_of_exprs('list.files()', 'dir()')
+  Hint: Digitare list.files() per tutti i file presenti nella directory di lavoro.
+- Class: cmd_question
+  Output: Nel corso di questa lezione, dovreste esaminare la pagina di aiuto per ogni
+    nuova funzione. Consultate la pagina di aiuto di list.files con il comando ?list.files.
+  CorrectAnswer: ?list.files
+  AnswerTests: any_of_exprs('?list.files', '?dir', 'help("list.files")', 'help("dir")')
+  Hint: Digitare ?list.files per visualizzare la pagina di aiuto.
+- Class: text
+  Output: Una delle parti più utili di qualsiasi file di aiuto di R è la sezione See
+    Also. Leggete questa sezione per list.files. Alcune di queste funzioni potranno
+    essere utilizzate nelle parti successive di questa lezione.
+- Class: text
+  Output: L'uso della funzione args() sul nome di una funzione è anche un modo comodo
+    per vedere quali argomenti può accettare una funzione.
+- Class: cmd_question
+  Output: Utilizzare la funzione args() per determinare gli argomenti di list.files().
+  CorrectAnswer: args(list.files)
+  AnswerTests: omnitest(correctExpr='args(list.files)')
+  Hint: Digitare args(list.files) per vedere gli argomenti di list.files.
+- Class: cmd_question
+  Output: Assegnare il valore della directory di lavoro corrente a una variabile chiamata
+    "old.dir".
+  CorrectAnswer: old.dir <- getwd()
+  AnswerTests: omnitest(correctExpr='old.dir <- getwd()')
+  Hint: Digitare old.dir <- getwd() per assegnare il valore della directory di lavoro
+    corrente a una variabile chiamata "old.dir".
+- Class: text
+  Output: Useremo old.dir alla fine di questa lezione per tornare al punto di partenza.
+    Molte funzioni di query come getwd() hanno l'utile proprietà di restituire la
+    risposta alla domanda come risultato della funzione.
+- Class: cmd_question
+  Output: Usa dir.create() per creare una directory nella directory di lavoro corrente
+    chiamata "testdir".
+  CorrectAnswer: dir.create("testdir")
+  AnswerTests: omnitest(correctExpr='dir.create("testdir")')
+  Hint: Digita dir.create("testdir") per creare una directory nella directory di lavoro
+    corrente chiamata "testdir".
+- Class: text
+  Output: Faremo tutto il nostro lavoro in questa nuova directory e poi la elimineremo
+    dopo aver finito.
+- Class: cmd_question
+  Output: Imposta la tua directory di lavoro su "testdir" con il comando setwd().
+  CorrectAnswer: setwd("testdir")
+  AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
+  Hint: Usa setwd("testdir") per impostare la tua directory di lavoro su "testdir".
+- Class: text
+  Output: In generale, vorrai che la tua directory di lavoro sia in un posto ragionevole,
+    magari creata per il progetto specifico su cui stai lavorando, collegata a un
+    progetto RStudio.
+- Class: cmd_question
+  Output: Crea un file nella tua directory di lavoro chiamato "mytest.R" usando la
+    funzione file.create().
+  CorrectAnswer: file.create("mytest.R")
+  AnswerTests: omnitest(correctExpr='file.create("mytest.R")')
+  Hint: file.create("mytest.R") farà il lavoro!
+- Class: cmd_question
+  Output: Adesso potrai volere modificare il contenuto di "mytest.R" con file.edit
+  CorrectAnswer: file.edit("mytest.R")
+  AnswerTests: omnitest(correctExpr='file.edit("mytest.R")')
+  Hint: Utilizzare file.edit("mytest.R") per modificare un file.
+- Class: cmd_question
+  Output: Modificare il nome del file "mytest.R" in "mytest2.R" utilizzando file.rename().
+  CorrectAnswer: file.rename("mytest.R", "mytest2.R")
+  AnswerTests: any_of_exprs('file.rename("mytest.R", "mytest2.R")', 'file.rename(from
+    = "mytest.R", to = "mytest2.R")')
+  Hint: file.rename("mytest.R", "mytest2.R") è la risposta. Cercare su Google usando
+    le parole chiave della domanda, insieme alla lettera R, ti darà spesso un buon
+    suggerimento.
+- Class: text
+  Output: Il tuo sistema operativo, e anche RStudio, fornirà strumenti più semplici
+    per questo tipo di attività, ma è utile avere la possibilità di manipolare i file
+    in modo programmatico. Ora potresti provare a eliminare mytest.R usando file.remove('mytest.R'),
+    ma non funzionerà poiché mytest.R non esiste più. L'hai già rinominato.
+- Class: cmd_question
+  Output: Crea una copia di "mytest2.R" chiamata "mytest3.R" usando file.copy().
+  CorrectAnswer: file.copy("mytest2.R", "mytest3.R")
+  AnswerTests: any_of_exprs('file.copy("mytest2.R", "mytest3.R")', 'file.copy(from
+    = "mytest2.R", to = "mytest3.R")')
+  Hint: file.copy("mytest2.R", "mytest3.R") funziona.
+- Class: text
+  Output: Ora hai due file nella directory corrente. Potrebbe non sembrare molto interessante.
+    Ma cosa succederebbe se stessi lavorando con dozzine o milioni di singoli file?
+    In quel caso sarebbe assolutamente necessario poter agire programmaticamente su
+    molti file. Non dimenticare che puoi, temporaneamente, lasciare la lezione digitando
+    play() e poi tornare digitando nxt().
+- Class: cmd_question
+  Output: È possibile utilizzare file.path per costruire percorsi di file e directory
+    indipendenti dal sistema operativo su cui è in esecuzione il codice R. Passa getwd()
+    e 'folder2' come argomenti a file.path per creare un percorso indipendente dalla
+    piattaforma che parte dalla attuale working directory.
+  CorrectAnswer: file.path(getwd(), "folder2")
+  AnswerTests: omnitest(correctExpr='file.path(getwd(), "folder2")')
+  Hint: file.path(getwd(), "folder2") funziona.
+- Class: cmd_question
+  Output: Dai un'occhiata alla documentazione per dir.create inserendo ?dir.create
+    . Si noti l'argomento 'ricorsivo'. Per creare directory nidificate, 'recursive'
+    deve essere impostato su TRUE.
+  CorrectAnswer: ?dir.create
+  AnswerTests: omnitest(correctExpr='?dir.create')
+  Hint: ?dir.create ti mostrerà i documenti.
+- Class: cmd_question
+  Output: Crea una directory nella directory di lavoro corrente chiamata "testdir2"
+    e una sottodirectory chiamata "testdir3", tutto in un unico comando usando dir.create()
+    e file.path().
+  CorrectAnswer: dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)
+  AnswerTests: omnitest(correctExpr='dir.create(file.path("testdir2", "testdir3"),
+    recursive = TRUE)')
+  Hint: dir.create(file.path('testdir2', 'testdir3'), recursive = TRUE) otterrà il
+    risultato. Se hai dimenticato l'argomento ricorsivo, il comando potrebbe sembrare
+    funzionare, ma non ha creato la directory nidificata.
+- Class: cmd_question
+  Output: 'Spiegazione 2.1: Adesso sperimentiamo un po'' liberamente con play prima
+    di imparare altri comandi. Per ricominciare il lavoratorio utilizziamo nxt()'
+  CorrectAnswer: play()
+  AnswerTests: omnitest(correctExpr='play()')
+  Hint: Utilizzare play() per sperimentare liberamente.
+- Class: text
+  Output: PAUSA 2.1
+- Class: cmd_question
+  Output: Torna alla tua directory di lavoro originale usando setwd(). (Ricorda che
+    abbiamo creato la variabile old.dir con il percorso completo per la directory
+    di lavoro originale all'inizio di queste domande.)
+  CorrectAnswer: setwd(old.dir)
+  AnswerTests: omnitest(correctExpr='setwd(old.dir)')
+  Hint: Usa setwd(old.dir).
+- Class: text
+  Output: Spesso è utile salvare le impostazioni che avevi prima di iniziare un'analisi
+    e poi ripristinarle alla fine. Questo trucco viene spesso utilizzato all'interno
+    delle funzioni; salvi, diciamo, le impostazioni par() con cui hai iniziato, fai
+    un po' di confusione e poi le riporti ai valori originali alla fine. Questo non
+    è lo stesso di quello che abbiamo fatto qui, ma sembra abbastanza simile da menzionarlo.

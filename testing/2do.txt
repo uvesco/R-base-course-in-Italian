@@ -9,3 +9,5 @@ complete.cases
 
 idee:
 creare un repository per il monitoraggio varroa e aprirlo alla collaborazione 
+
+funzioni_utili

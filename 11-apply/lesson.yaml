@@ -1,0 +1,49 @@
+- Class: meta
+  Course: R base course in Italian
+  Lesson: 11-apply
+  Author: Umberto Vesco
+  Type: Standard
+  Organization: Unaapi
+  Version: 3.0.0
+- Class: text
+  Output: In questa lezione imparerai come usare apply().
+- Class: cmd_question
+  Output: Ho memorizzato il set di dati in una variabile chiamata brigida. Digitare
+    head(brigida) per visualizzare in anteprima le prime sei righe (ovvero la "testa")
+    del set di dati.
+  CorrectAnswer: head(brigida)
+  AnswerTests: omnitest(correctExpr='head(brigida)')
+  Hint: Digitare head(brigida) per visualizzare la "testa" del set di dati.
+- Class: cmd_question
+  Output: Puoi anche vedere la tabella in RStudio con View(brigida) .
+  CorrectAnswer: View(brigida)
+  AnswerTests: omnitest(correctExpr='View(brigida)')
+  Hint: Digitare View(brigida) per visualizzare la tabella in RStudio.
+- Class: cmd_question
+  Output: Nelle colonne tra 11 e 16 ci sono i dati di caduta di varroa dopo un trattamento
+    in blocco di covata, ogni colonna è un giorno di conteggio. Vorrei una nuova colonna
+    con la somma, ma ci sono degli NA. Posso usare apply per applicare la funzione
+    sum (somma) specificando nell'argomento margin che voglio andare per righe.
+  CorrectAnswer: apply(brigida[,11:16], 1, sum)
+  AnswerTests: omnitest(correctExpr='apply(brigida[,11:16], 1, sum)')
+  Hint: Digitare apply(brigida[,11:16], 1, sum) per calcolare le somme.
+- Class: cmd_question
+  Output: Adesso potresti voler salvare il risultato in una nuova colonna che chiami
+    caduteTotali. Recuperi dalla storia il comando precedente e assegni il risultato
+    alla nuova colonna. Usi il dollaro per indicare la colonna (brigida$caduteTotali)
+  CorrectAnswer: brigida$caduteTotali <- apply(brigida[,11:16], 1, sum)
+  AnswerTests: omnitest(correctExpr='brigida$caduteTotali <- apply(brigida[,11:16],
+    1, sum)')
+  Hint: Digitare brigida$caduteTotali <- apply(brigida[,11:16], 1, sum) per salvare
+    le somme come nuova colonna.
+- Class: text
+  Output: Controlla in RStudio nel riquadro Environment le colonne di brigida e cerca
+    la colonna nuova.
+- Class: cmd_question
+  Output: Ti potrebbe interessare anche calcolare la caduta media per ciascun giorno.
+    In questo caso si va per colonne e si usa la funzione mean Posso usare apply per
+    applicare la funzione sum (somma) specificando nell'argomento margin che voglio
+    andare per righe. Attenzione agli NA.
+  CorrectAnswer: apply(brigida[,11:16], 2, mean, na.rm = T)
+  AnswerTests: omnitest(correctExpr='apply(brigida[,11:16], 2, mean, na.rm = T)')
+  Hint: Digitare apply(brigida[,11:16], 2, mean, na.rm = T) per calcolare le somme.

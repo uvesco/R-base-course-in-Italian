@@ -1,0 +1,213 @@
+- Class: meta
+  Course: R base course in Italian
+  Lesson: 16-Simulazioni
+  Author: Nick Carchedi
+  Type: Standard
+  Organization: Unaapi
+  Version: 3.0.0
+- Class: text
+  Output: Uno dei grandi vantaggi dell'utilizzo di un linguaggio di programmazione
+    statistica come R è la sua vasta raccolta di strumenti per la simulazione di numeri
+    casuali.
+- Class: text
+  Output: Questa lezione presuppone la familiarità con alcune comuni distribuzioni
+    di probabilità, ma questi argomenti saranno discussi solo rispetto alla generazione
+    di numeri casuali. Anche se non hai alcuna esperienza precedente con questi concetti,
+    dovresti essere in grado di completare la lezione e comprendere i concetti principali.
+- Class: cmd_question
+  Output: La prima funzione che useremo per generare numeri casuali è sample(). Usa
+    ?sample per recuperare la documentazione.
+  CorrectAnswer: ?sample
+  AnswerTests: omnitest(correctExpr='?sample')
+  Hint: Usa '?sample' per recuperare la documentazione per la funzione sample().
+- Class: cmd_question
+  Output: 'Simuliamo il lancio di quattro dadi a sei facce: sample(1:6, 4, replace
+    = TRUE).'
+  CorrectAnswer: sample(1:6, 4, replace = TRUE)
+  AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
+  Hint: Digita sample(1:6, 4, replace = TRUE) per simulare il lancio di quattro dadi
+    a sei facce.
+- Class: cmd_question
+  Output: Ora ripeti il comando per vedere come differisce il tuo risultato. (La probabilità
+    di ottenere esattamente lo stesso risultato è (1/6)^4 = 0,00077, che è piuttosto
+    piccola!)
+  CorrectAnswer: sample(1:6, 4, replace = TRUE)
+  AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
+  Hint: Digita sample(1:6, 4, replace = TRUE) per simulare di nuovo il lancio di quattro
+    dadi a sei facce.
+- Class: text
+  Output: sample(1:6, 4, replace = TRUE) ordina a R di selezionare casualmente quattro
+    numeri tra 1 e 6, CON sostituzione. Il campionamento con sostituzione significa
+    semplicemente che ogni numero viene "sostituito" dopo essere stato selezionato,
+    in modo che lo stesso numero possa comparire più di una volta. Questo è ciò che
+    vogliamo qui, poiché ciò che ottieni su un dado non dovrebbe influenzare ciò che
+    ottieni su nessuno degli altri.
+- Class: cmd_question
+  Output: Ora campiona 10 numeri compresi tra 1 e 20, SENZA sostituzione. Per campionare
+    senza sostituzione, tralascia semplicemente l'argomento 'sostituisci'.
+  CorrectAnswer: sample(1:20, 10)
+  AnswerTests: match_call('sample(1:20, 10)')
+  Hint: Digitare sample(1:20, 10) per campionare 10 numeri compresi tra 1 e 20, senza
+    sostituzione.
+- Class: text
+  Output: Poiché l'ultimo comando è stato campionato senza sostituzione, nessun numero
+    appare più di una volta nell'output.
+- Class: cmd_question
+  Output: LETTERS è una variabile predefinita in R contenente un vettore di tutte
+    le 26 lettere dell'alfabeto inglese. Dai un'occhiata adesso.
+  CorrectAnswer: LETTERS
+  AnswerTests: omnitest(correctExpr='LETTERS')
+  Hint: Digita LETTERS per stamparne il contenuto sulla console.
+- Class: cmd_question
+  Output: La funzione sample() può anche essere usata per permutare, o riorganizzare,
+    gli elementi di un vettore. Ad esempio, prova sample(LETTERS) per permutare tutte
+    le 26 lettere dell'alfabeto inglese.
+  CorrectAnswer: sample(LETTERS)
+  AnswerTests: omnitest(correctExpr='sample(LETTERS)')
+  Hint: Usa sample(LETTERS) per permutare tutte le 26 lettere dell'alfabeto inglese.
+- Class: text
+  Output: Questo è identico al prelievo di un campione di taglia 26 da LETTERE, senza
+    sostituzione. Quando l'argomento 'size' di sample() non è specificato, R prende
+    un campione di dimensioni uguali al vettore da cui stai campionando.
+- Class: text
+  Output: Supponiamo ora di voler simulare 100 lanci di una moneta sleale a due facce.
+    Questa particolare moneta ha una probabilità di 0,3 di ottenere "croce" e una
+    probabilità di 0,7 di ottenere "testa".
+- Class: cmd_question
+  Output: Lascia che il valore 0 rappresenti croce e il valore 1 rappresenti testa.
+    Usa sample() per disegnare un campione di dimensione 100 dal vettore c(0,1), con
+    sostituzione. Poiché la moneta è sleale, dobbiamo attribuire probabilità specifiche
+    ai valori 0 (croce) e 1 (testa) con un quarto argomento, prob = c(0.3, 0.7). Assegna
+    il risultato a una nuova variabile chiamata flips.
+  CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
+  AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3,
+    0.7))')
+  Hint: 'Il seguente comando produrrà 100 lanci di una moneta sleale e assegnerà il
+    risultato: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
+- Class: cmd_question
+  Output: Visualizza il contenuto della variabile flips.
+  CorrectAnswer: flips
+  AnswerTests: omnitest(correctExpr='flips')
+  Hint: Basta digitare flips per visualizzarne il contenuto.
+- Class: cmd_question
+  Output: Dato che impostiamo la probabilità di ottenere testa in ogni dato lancio
+    a 0,7, ci aspetteremmo che circa 70 dei nostri lanci di moneta abbiano il valore
+    1. Conta il numero effettivo di 1 contenuto nei lanci usando la funzione sum().
+  CorrectAnswer: sum(flips)
+  AnswerTests: omnitest(correctExpr='sum(flips)')
+  Hint: sum(flips) sommerà tutti gli 1 e gli 0, dandoti il numero totale di 1 nei
+    flip.
+- Class: cmd_question
+  Output: Il lancio di una moneta è un risultato binario (0 o 1) e stiamo eseguendo
+    100 prove indipendenti (lanci di moneta), quindi possiamo usare rbinom() per simulare
+    una variabile casuale binomiale. Apri la documentazione per rbinom() usando ?rbinom.
+  CorrectAnswer: ?rbinom
+  AnswerTests: omnitest(correctExpr='?rbinom')
+  Hint: Digita ?rbinom per richiamare il file della guida per rbinom().
+- Class: text
+  Output: Ogni distribuzione di probabilità in R ha una funzione r*** (per "casuale"),
+    una funzione d*** (per "densità"), una p*** (per "probabilità") e q*** (per "
+    quantile"). Siamo più interessati alle funzioni r*** in questa lezione, ma ti
+    incoraggio a esplorare le altre per conto tuo.
+- Class: cmd_question
+  Output: Una variabile casuale binomiale rappresenta il numero di "successi" (testa)
+    in un dato numero di "prove" indipendenti (lanci di moneta). Pertanto, possiamo
+    generare una singola variabile casuale che rappresenta il numero di teste in 100
+    lanci della nostra moneta sleale usando rbinom(1, size = 100, prob = 0.7). Nota
+    che specifichi solo la probabilità di "successo" (testa) e NON la probabilità
+    di "fallimento" (croce). Provalo ora.
+  CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
+  AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
+  Hint: Chiama rbinom() con n = 1, size = 100 e prob = 0.7.
+- Class: cmd_question
+  Output: Allo stesso modo, se vogliamo vedere tutti gli 0 e gli 1, possiamo richiedere
+    100 osservazioni, ciascuna di dimensione 1, con probabilità di successo di 0,7.
+    Fai un tentativo, assegnando il risultato a una nuova variabile chiamata flips2.
+  CorrectAnswer: flips2 <- rbinom(100, size = 1, prob = 0.7)
+  AnswerTests: match_call('flips2 <- rbinom(100, size = 1, prob = 0.7)')
+  Hint: Chiama rbinom() con n = 100, size = 1 e prob = 0.7 e assegna il risultato
+    a flips2.
+- Class: cmd_question
+  Output: Visualizza i contenuti di flips2.
+  CorrectAnswer: flips2
+  AnswerTests: omnitest('flips2')
+  Hint: Digita flips2 per visualizzarne il contenuto.
+- Class: cmd_question
+  Output: Ora usa sum() per contare il numero di 1 (teste) in flips2. Dovrebbe essere
+    vicino a 70!
+  CorrectAnswer: sum(flips2)
+  AnswerTests: omnitest('sum(flips2)')
+  Hint: Usa sum(flips2) per contare il numero di 1.
+- Class: cmd_question
+  Output: Simile a rbinom(), possiamo usare R per simulare numeri casuali da molte
+    altre distribuzioni di probabilità. Apri ora la documentazione per rnorm().
+  CorrectAnswer: ?rnorm
+  AnswerTests: omnitest('?rnorm')
+  Hint: Digita ?rnorm per visualizzare il suo file di aiuto.
+- Class: cmd_question
+  Output: La distribuzione normale standard ha media 0 e deviazione standard 1. Come
+    puoi vedere nella sezione "Utilizzo" nella documentazione, i valori predefiniti
+    per gli argomenti "media" e "sd" di rnorm() sono rispettivamente 0 e 1. Pertanto,
+    rnorm(10) genererà 10 numeri casuali da una distribuzione normale standard. Provaci.
+  CorrectAnswer: rnorm(10)
+  AnswerTests: omnitest('rnorm(10)')
+  Hint: Usa rnorm(10) per generare 10 numeri casuali da una distribuzione normale
+    standard.
+- Class: cmd_question
+  Output: Ora fai lo stesso, tranne che con una media di 100 e una deviazione standard
+    di 25.
+  CorrectAnswer: rnorm(10, 100, 25)
+  AnswerTests: match_call('rnorm(10, 100, 25)')
+  Hint: Utilizzare rnorm(10, media = 100, sd = 25) per generare 10 numeri casuali
+    da una distribuzione normale con media 100 e deviazione standard 25.
+- Class: text
+  Output: Infine, se volessimo simulare 100 *gruppi* di numeri casuali, ciascuno contenente
+    5 valori generati da una distribuzione di Poisson con media 10? Iniziamo con un
+    gruppo di 5 numeri, poi ti mostrerò come ripetere l'operazione 100 volte in modo
+    comodo e compatto.
+- Class: cmd_question
+  Output: Genera 5 valori casuali da una distribuzione di Poisson con media 10. Controlla
+    la documentazione per rpois() se hai bisogno di aiuto.
+  CorrectAnswer: rpois(5, 10)
+  AnswerTests: match_call('rpois(5, 10)')
+  Hint: Usa rpois(5, 10) per generare 5 numeri casuali da una distribuzione di Poisson
+    con media 10.
+- Class: cmd_question
+  Output: Ora usa replicate(100, rpois(5, 10)) per eseguire questa operazione 100
+    volte. Memorizza il risultato in una nuova variabile chiamata my_pois.
+  CorrectAnswer: my_pois <- replicate(100, rpois(5, 10))
+  AnswerTests: match_call('my_pois <- replicate(100, rpois(5, 10))')
+  Hint: my_pois <- replicate(100, rpois(5, 10)) ripeterà l'operazione 100 volte e
+    memorizzerà il risultato.
+- Class: cmd_question
+  Output: Dai un'occhiata al contenuto di my_pois.
+  CorrectAnswer: my_pois
+  AnswerTests: omnitest('my_pois')
+  Hint: Stampa il contenuto di my_pois sulla console.
+- Class: cmd_question
+  Output: replicate() ha creato una matrice, ogni colonna della quale contiene 5 numeri
+    casuali generati da una distribuzione di Poisson con media 10. Ora possiamo trovare
+    la media di ogni colonna in my_pois usando la funzione colMeans(). Memorizza il
+    risultato in una variabile chiamata cm.
+  CorrectAnswer: cm <- colMeans(my_pois)
+  AnswerTests: omnitest('cm <- colMeans(my_pois)')
+  Hint: Utilizzare cm <- colMeans(my_pois) per creare un vettore di medie di colonna,
+    memorizzando il risultato in cm.
+- Class: cmd_question
+  Output: E diamo un'occhiata alla distribuzione della nostra colonna media tracciando
+    un istogramma con hist(cm).
+  CorrectAnswer: hist(cm)
+  AnswerTests: omnitest('hist(cm)')
+  Hint: hist(cm) ti darà un istogramma delle medie delle colonne.
+- Class: text
+  Output: Sembra che le nostre medie di colonna siano distribuite quasi normalmente,
+    giusto? Questo è il teorema del limite centrale all'opera, ma questa è una lezione
+    per un altro giorno!
+- Class: text
+  Output: Tutte le distribuzioni di probabilità standard sono integrate in R, incluse
+    esponenziale (rexp()), chi-quadrato (rchisq()), gamma (rgamma()), .... Bene, vedi
+    lo schema.
+- Class: text
+  Output: La simulazione è praticamente un campo a sé stante e abbiamo solo sfiorato
+    la superficie di ciò che è possibile. Ti incoraggio a esplorare ulteriormente
+    queste e altre funzioni per conto tuo.
