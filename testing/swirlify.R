@@ -1,8 +1,8 @@
 # comandi utili
 library(swirlify)
-pack_course("/home/umberto/Documenti/unaapi/R_Programming_E_IT")
+pack_course(getwd())
 
-source("testing/automated_translate.R")
+# source("testing/automated_translate.R")
 
 set_lesson()
 test_lesson()

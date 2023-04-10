@@ -1,0 +1,11 @@
+lezioni da creare:
+cicli for e while
+if
+
+altri grafici
+
+gestione dei dati: sort, order, merge, subset
+complete.cases
+
+idee:
+creare un repository per il monitoraggio varroa e aprirlo alla collaborazione 
