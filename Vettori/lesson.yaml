@@ -134,73 +134,73 @@
 - Class: text
   Output: PAUSA 4.2  
     
-    
-# - Class: text
-#   Output: Anche i vettori di caratteri sono molto comuni in R. Le virgolette doppie
-#     vengono utilizzate per distinguere gli oggetti carattere, come nell'esempio seguente.
-# - Class: cmd_question
-#   Output: 'Crea un vettore di caratteri che contenga le seguenti parole: "My", "name",
-#     "is". Ricorda di racchiudere ogni parola nel proprio insieme di virgolette doppie,
-#     in modo che R sappia che sono stringhe di caratteri. Memorizza il vettore in una
-#     variabile chiamata my_char.'
-#   CorrectAnswer: my_char <- c("My", "name", "is")
-#   AnswerTests: omnitest(correctExpr='my_char <- c("My", "name", "is")')
-#   Hint: Digita my_char <- c("My", "name", "is") per creare una nuova variabile chiamata
-#     my_char che contenga un vettore di caratteri di lunghezza 3. Assicurati che le
-#     virgole che separano le parole siano FUORI dalle virgolette, oppure altrimenti
-#     R pensa che le virgole facciano parte delle parole.
-# - Class: cmd_question
-#   Output: Stampa il contenuto di my_char per vedere come appare.
-#   CorrectAnswer: my_char
-#   AnswerTests: omnitest(correctExpr='my_char')
-#   Hint: Digita my_char per visualizzarne il contenuto.
-# - Class: text
-#   Output: In questo momento, my_char è un vettore di caratteri di lunghezza 3. Supponiamo
-#     di voler unire gli elementi di my_char insieme in una stringa di caratteri continua
-#     (ovvero un vettore di caratteri di lunghezza 1). Possiamo farlo usando la funzione
-#     paste().
-# - Class: cmd_question
-#   Output: Digita paste(my_char, collapse = " ") ora. Assicurati che ci sia uno spazio
-#     tra le doppie virgolette nell'argomento `collapse`. Vedrai perché in un secondo.
-#   CorrectAnswer: paste(my_char, collapse = " ")
-#   AnswerTests: omnitest(correctExpr='paste(my_char, collapse = " ")')
-#   Hint: Usa paste(my_char, collapse = " ") per comprimere le parole nel vettore in modo
-#     che formino quasi una frase. Dovrebbe esserci un singolo spazio tra le virgolette
-#     doppie nell'argomento `collapse` in modo che ci siano spazi singoli che separano
-#     le parole.
-# - Class: text
-#   Output: L'argomento `collapse` della funzione paste() dice a R che quando uniamo
-#     gli elementi del vettore di caratteri my_char, vorremmo separarli con spazi singoli.
-# - Class: text
-#   Output: Sembra che ci manchi qualcosa.... Ah, sì! Il tuo nome!
-# - Class: cmd_question
-#   Output: 'Per aggiungere (o ''concatenare'') il tuo nome alla fine di my_char, usa
-#     la funzione c() in questo modo: c(my_char, "your_name_here"). Metti il tuo nome
-#     tra virgolette dove ho messo "your_name_here". Provalo ora, memorizzando il risultato
-#     in una nuova variabile chiamata my_name.'
-#   CorrectAnswer: my_name <- c(my_char, "Swirl")
-#   AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
-#     val_has_length(4)
-#   Hint: Aggiungi il tuo nome alla fine del vettore my_char usando la funzione c().
-#     Assicurati di assegnare il risultato a una nuova variabile chiamata my_name. Se
-#     il tuo nome fosse "Swirl", dovresti digitare my_name <- c(my_char, "Swirl").
-# - Class: cmd_question
-#   Output: Dai un'occhiata al contenuto di my_name.
-#   CorrectAnswer: my_name
-#   AnswerTests: omnitest(correctExpr='my_name')
-#   Hint: Digita my_name e premi Invio per visualizzarne il contenuto.
-# - Class: cmd_question
-#   Output: Ora, usa ancora una volta la funzione paste() per unire le parole in my_name
-#     insieme in una singola stringa di caratteri. Non dimenticare di dire collapse
-#     = " "!
-#   CorrectAnswer: paste(my_name, collapse = " ")
-#   AnswerTests: omnitest(correctExpr='paste(my_name, collapse = " ")')
-#   Hint: Usa paste(my_name, collapse = " ") per unire tutte e quattro le parole insieme,
-#     separate da spazi singoli.
-# - Class: text
-#   Output: In questo esempio, abbiamo utilizzato la funzione paste() per comprimere
-#     gli elementi di un singolo vettore di carattere. paste() può essere utilizzato
-#     anche per unire gli elementi di più vettori di caratteri.
+
+- Class: text
+  Output: Anche i vettori di caratteri sono molto comuni in R. Le virgolette doppie
+    vengono utilizzate per distinguere gli oggetti carattere, come nell'esempio seguente.
+- Class: cmd_question
+  Output: 'Crea un vettore di caratteri che contenga le seguenti parole: "My", "name",
+    "is". Ricorda di racchiudere ogni parola nel proprio insieme di virgolette doppie,
+    in modo che R sappia che sono stringhe di caratteri. Memorizza il vettore in una
+    variabile chiamata my_char.'
+  CorrectAnswer: my_char <- c("My", "name", "is")
+  AnswerTests: omnitest(correctExpr='my_char <- c("My", "name", "is")')
+  Hint: Digita my_char <- c("My", "name", "is") per creare una nuova variabile chiamata
+    my_char che contenga un vettore di caratteri di lunghezza 3. Assicurati che le
+    virgole che separano le parole siano FUORI dalle virgolette, oppure altrimenti
+    R pensa che le virgole facciano parte delle parole.
+- Class: cmd_question
+  Output: Stampa il contenuto di my_char per vedere come appare.
+  CorrectAnswer: my_char
+  AnswerTests: omnitest(correctExpr='my_char')
+  Hint: Digita my_char per visualizzarne il contenuto.
+- Class: text
+  Output: In questo momento, my_char è un vettore di caratteri di lunghezza 3. Supponiamo
+    di voler unire gli elementi di my_char insieme in una stringa di caratteri continua
+    (ovvero un vettore di caratteri di lunghezza 1). Possiamo farlo usando la funzione
+    paste().
+- Class: cmd_question
+  Output: Digita paste(my_char, collapse = " ") ora. Assicurati che ci sia uno spazio
+    tra le doppie virgolette nell'argomento `collapse`. Vedrai perché in un secondo.
+  CorrectAnswer: paste(my_char, collapse = " ")
+  AnswerTests: omnitest(correctExpr='paste(my_char, collapse = " ")')
+  Hint: Usa paste(my_char, collapse = " ") per comprimere le parole nel vettore in modo
+    che formino quasi una frase. Dovrebbe esserci un singolo spazio tra le virgolette
+    doppie nell'argomento `collapse` in modo che ci siano spazi singoli che separano
+    le parole.
+- Class: text
+  Output: L'argomento `collapse` della funzione paste() dice a R che quando uniamo
+    gli elementi del vettore di caratteri my_char, vorremmo separarli con spazi singoli.
+- Class: text
+  Output: Sembra che ci manchi qualcosa.... Ah, sì! Il tuo nome!
+- Class: cmd_question
+  Output: 'Per aggiungere (o ''concatenare'') il tuo nome alla fine di my_char, usa
+    la funzione c() in questo modo: c(my_char, "your_name_here"). Metti il tuo nome
+    tra virgolette dove ho messo "your_name_here". Provalo ora, memorizzando il risultato
+    in una nuova variabile chiamata my_name.'
+  CorrectAnswer: my_name <- c(my_char, "Swirl")
+  AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
+    val_has_length(4)
+  Hint: Aggiungi il tuo nome alla fine del vettore my_char usando la funzione c().
+    Assicurati di assegnare il risultato a una nuova variabile chiamata my_name. Se
+    il tuo nome fosse "Swirl", dovresti digitare my_name <- c(my_char, "Swirl").
+- Class: cmd_question
+  Output: Dai un'occhiata al contenuto di my_name.
+  CorrectAnswer: my_name
+  AnswerTests: omnitest(correctExpr='my_name')
+  Hint: Digita my_name e premi Invio per visualizzarne il contenuto.
+- Class: cmd_question
+  Output: Ora, usa ancora una volta la funzione paste() per unire le parole in my_name
+    insieme in una singola stringa di caratteri. Non dimenticare di dire collapse
+    = " "!
+  CorrectAnswer: paste(my_name, collapse = " ")
+  AnswerTests: omnitest(correctExpr='paste(my_name, collapse = " ")')
+  Hint: Usa paste(my_name, collapse = " ") per unire tutte e quattro le parole insieme,
+    separate da spazi singoli.
+- Class: text
+  Output: In questo esempio, abbiamo utilizzato la funzione paste() per comprimere
+    gli elementi di un singolo vettore di carattere. paste() può essere utilizzato
+    anche per unire gli elementi di più vettori di caratteri.
 - Class: cmd_question
   Output: Nel caso più semplice, possiamo unire due vettori di caratteri che sono
     ciascuno di lunghezza 1 (cioè unire due parole). Prova paste("Hello", "world!",

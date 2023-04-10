@@ -10,6 +10,11 @@
     più importanti della famiglia di funzioni *apply di R, note anche come funzioni
     loop.
 - Class: text
+  Output: Come hai già appreso nella lezione su apply, buona parte delle operazioni
+    proposte sui data.frames (un caso particolare di lista) possono essere eseguite
+    con la funzione apply, tuttavia sulle liste che non sono data.frames
+    possono essere utilizzati solo lapply() e sapply().
+- Class: text
   Output: Queste potenti funzioni, insieme ai loro parenti stretti (vapply() e tapply(),
     tra gli altri) offrono un mezzo semplice e utile per implementare la strategia
     Split-Apply-Combine per l'analisi dei dati.

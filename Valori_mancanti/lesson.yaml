@@ -100,25 +100,25 @@
   CorrectAnswer: sum(my_na)
   AnswerTests: omnitest(correctExpr='sum(my_na)')
   Hint: Usa sum(my_na) per contare il numero NA nei dati.
-# - Class: cmd_question
-#   Output: Abbastanza bello, eh? Infine, diamo un'occhiata ai dati per convincerci
-#     che tutto 'quadra'. Stampa i miei_dati sulla console.
-#   CorrectAnswer: my_data
-#   AnswerTests: omnitest(correctExpr='my_data')
-#   Hint: Stampa i miei_dati sulla console.
-# - Class: cmd_question
-#   Output: 'Ora che abbiamo capito i NA, diamo un''occhiata a un secondo tipo di valore
-#     mancante: NaN, che sta per "non un numero"/"Not a Number". Per generare NaN, prova ora a dividere
-#     (utilizzando una barra) 0 per 0.'
-#   CorrectAnswer: 0/0
-#   AnswerTests: omnitest(correctExpr='0/0')
-#   Hint: Prova 0/0.
-# - Class: cmd_question
-#   Output: Facciamone un altro, solo per divertimento. In R, Inf sta per infinito.
-#     Cosa succede se sottrai Inf da Inf?
-#   CorrectAnswer: Inf - Inf
-#   AnswerTests: omnitest(correctExpr='Inf - Inf')
-#   Hint: Tipo Inf - Inf. Riesci a indovinare il risultato?
+- Class: cmd_question
+  Output: Abbastanza bello, eh? Infine, diamo un'occhiata ai dati per convincerci
+    che tutto 'quadra'. Stampa i miei_dati sulla console.
+  CorrectAnswer: my_data
+  AnswerTests: omnitest(correctExpr='my_data')
+  Hint: Stampa i miei_dati sulla console.
+- Class: cmd_question
+  Output: 'Ora che abbiamo capito i NA, diamo un''occhiata a un secondo tipo di valore
+    mancante: NaN, che sta per "non un numero"/"Not a Number". Per generare NaN, prova ora a dividere
+    (utilizzando una barra) 0 per 0.'
+  CorrectAnswer: 0/0
+  AnswerTests: omnitest(correctExpr='0/0')
+  Hint: Prova 0/0.
+- Class: cmd_question
+  Output: Facciamo un'altra prova, solo per divertimento. In R, Inf sta per infinito.
+    Cosa succede se sottrai Inf da Inf?
+  CorrectAnswer: Inf - Inf
+  AnswerTests: omnitest(correctExpr='Inf - Inf')
+  Hint: Digita Inf - Inf. Riesci a indovinare il risultato?
 # - Class: mult_question
 #   Output: Vuoi informare qualcuno del completamento con successo di questa lezione
 #     via e-mail?
