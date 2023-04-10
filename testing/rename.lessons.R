@@ -38,6 +38,9 @@ for (i in seq_along(nuoviNomiC)) {
 nomeCorso <- basename(corso_dir)
 for (lezione in nuoviNomiC) {
   yaml_file <- file.path(corso_dir, lezione, "lesson.yaml")
+  file.copy(yaml_file,
+            file.path(corso_dir, lezione, "lesson_old.yaml")
+            )
   yaml <- read_yaml(yaml_file)
   yaml[[1]]$Lesson <- gsub("_", " ", lezione) # sostituisce gli underscore con spazi
   yaml[[1]]$Course <- gsub("-", " ", basename(corso_dir)) # sostituisce gli hyphen con spazi
