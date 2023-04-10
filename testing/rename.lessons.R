@@ -7,7 +7,7 @@ library(yaml)
 corso_dir <- getwd()
 versionNum <- "3.0.0"
 
-# estrazione dei vecchi nomi contratti dal fine MANIFEST
+# estrazione dei vecchi nomi contratti dal file MANIFEST
 manifest_file <- file.path(corso_dir, "MANIFEST")
 vecchiNomiC <- readLines(manifest_file)
 
