@@ -24,7 +24,7 @@ for (j in seq_along(nuoviNomiC)) {
   for(i in 2:length(yaml)){
       if(# se c'è un numero prima della prima occorrenza del trattino
         !is.na(as.numeric(gsub("(.+?)(\\-.*)", "\\1", yaml[[i]]$Output)))){
-        # elimina la parte prima del primo
+        # elimina la parte prima del primo - se è un numero
         yaml[[i]]$Output <- sub(".*?-", '', yaml[[i]]$Output)
       }
     yaml[[i]]$Output <- paste0(prog[i-1], "-", yaml[[i]]$Output)
