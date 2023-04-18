@@ -4,21 +4,21 @@
   Author: Nick Carchedi, Umberto Vesco
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 1.1-Se in qualsiasi momento si desiderano maggiori informazioni su un particolare
-    argomento relativo a R, è possibile digitare help.start() al prompt, che aprirà
-    un menu di risorse (all'interno di RStudio o del browser web predefinito, a seconda
+    argomento relativo a R, è possibile digitare help.start() al nella console di
+    R. Si aprirà l'help (all'interno di RStudio o del browser web predefinito, a seconda
     della configurazione). In alternativa, una semplice ricerca sul web spesso fornisce
     la risposta che si sta cercando.
 - Class: cmd_question
   Output: 1.2-Ogni volta che hai domande su una particolare funzione, puoi accedere
-    ai file di aiuto integrati di R tramite il comando ?. Ad esempio, se desideri
-    ulteriori informazioni sulla funzione c(), digita ?c senza le parentesi che normalmente
+    ai file di help integrati di R tramite il comando ?. Ad esempio, se desideri ulteriori
+    informazioni sulla funzione c(), digita ?c senza le parentesi che normalmente
     seguono il nome di una funzione. Prova a farlo.
   CorrectAnswer: ?c
   AnswerTests: omnitest(correctExpr='?c')
-  Hint: Digita ?c e premi Invio. Questo aprirà il file di aiuto per la funzione c().
+  Hint: Digita ?c e premi Invio. Questo aprirà il file di help per la funzione c().
 - Class: cmd_question
   Output: 1.3-Nella sua forma più semplice, R può essere usata come una calcolatrice
     interattiva. Digita 5 + 7 e premi Invio.
@@ -27,7 +27,7 @@
   Hint: Digita 5 + 7 e premi invio.
 - Class: text
   Output: 1.4-R stampa il risultato 12. Tuttavia, R è un linguaggio di programmazione
-    e rispetto a una calcolatrice può essere usata per automatizzare un processo o
+    e rispetto a una calcolatrice può essere usata per automatizzare processi e per
     evitare ripetizioni inutili.
 - Class: text
   Output: 1.5-Se vogliamo utilizzare il risultato 12 in un secondo calcolo invece
@@ -35,14 +35,14 @@
     il risultato.
 - Class: text
   Output: '1.6-Il modo in cui si assegna un valore a una variabile in R è usando l''operatore
-    di assegnazione, che è semplicemente un simbolo ''meno di'' seguito da un segno
+    di assegnazione, che è semplicemente un simbolo ''minore di'' seguito da un segno
     ''meno''. Si presenta in questo modo: <-'
 - Class: text
   Output: 1.7-Considerate l'operatore di assegnazione come una freccia che punta verso
     il nome dell'oggetto arrivando dal contenuto che gli si assegna.
 - Class: cmd_question
-  Output: 1.8-Assegnate 5 + 7 a una nuova variabile chiamata x, digitando si digita
-    x <- 5 + 7.
+  Output: 1.8-Assegnate 5 + 7 a una nuova variabile chiamata x, digitando x <- 5 +
+    7.
   CorrectAnswer: x <- 5 + 7
   AnswerTests: any_of_exprs('x <- 5 + 7', 'x <- 7 + 5')
   Hint: Digitare x <- 5 + 7. È utile includere un singolo spazio su ogni lato dell''operatore
@@ -79,42 +79,36 @@
   CorrectAnswer: 'y'
   AnswerTests: omnitest(correctExpr='y')
   Hint: Digitare y e premere Invio.
-- Class: cmd_question
-  Output: '1.15-Spiegazione 1.1: Adesso sperimentiamo un po'' liberamente con play
-    prima di imparare altri comandi. Per ricominciare il lavoratorio utilizziamo nxt()'
-  CorrectAnswer: play()
-  AnswerTests: omnitest(correctExpr='play()')
-  Hint: Utilizzare play() per sperimentare liberamente.
 - Class: text
-  Output: 1.16-PAUSA 1.1
-- Class: text
-  Output: 1.17-Ora creiamo una piccola collezione di valori chiamata vettore. Ogni
+  Output: 1.15-Ora creiamo una piccola collezione di valori chiamata vettore. Ogni
     oggetto che contiene dati è chiamato struttura di dati e i vettori numerici sono
     il tipo più semplice di struttura di dati in R. Infatti, anche un singolo numero
     è considerato un vettore di lunghezza uno.
 - Class: cmd_question
-  Output: '1.18-Il modo più semplice per creare un vettore è utilizzare la funzione
+  Output: '1.16-Il modo più semplice per creare un vettore è utilizzare la funzione
     c(), che sta per ''concatenare'' o ''combinare''. Crea un vettore contenente i
     numeri 1.1, 9 e 3.14, digitando c(1.1, 9, 3.14). E memorizza il risultato in una
     variabile chiamata z. ATTENZIONE: il separatore decimale è il punto (.), mentre
-    la virgola (,) separa gli argomenti delle funzioni. Il linguaggio R è case-sensitive.'
+    la virgola (,) separa gli argomenti delle funzioni. Il linguaggio R è case-sensitive,
+    cioè distingue maiuscole e minuscole.'
   CorrectAnswer: z <- c(1.1, 9, 3.14)
   AnswerTests: omnitest(correctExpr='z <- c(1.1, 9, 3.14)')
   Hint: 'Inserendo z <- c(1.1, 9, 3.14) assegnerai il vettore (1.1, 9, 3.14) a una
     nuova variabile chiamata z. Includere singoli spazi dopo le virgole nel vettore
     non è obbligatorio, ma aiuta a rendere il tuo codice meno confuso e più leggibile.
     ATTENZIONE: il separatore decimale è il punto (.), mentre la virgola (,) separa
-    gli argomenti delle funzioni. Il linguaggio R è case-sensitive.'
+    gli argomenti delle funzioni. Il linguaggio R è case-sensitive, cioè distingue
+    maiuscole e minuscole.'
 - Class: text
-  Output: 1.19-c() è la seconda funzione che utilizziamo, la prima era ls().
+  Output: 1.17-c() è la seconda funzione che utilizziamo, la prima era ls().
 - Class: cmd_question
-  Output: 1.20-Digita z per visualizzarne il contenuto. Nota che non ci sono virgole
-    a separare i valori nell'output.
+  Output: 1.18-Digita z per visualizzare il contenuto della variabile z. Nota che
+    non ci sono virgole a separare i valori nell'output.
   CorrectAnswer: z
   AnswerTests: omnitest(correctExpr='z')
   Hint: Digita z e premi Invio per visualizzarne il contenuto.
 - Class: cmd_question
-  Output: 1.21-Puoi combinare vettori per creare un nuovo vettore. Crea un nuovo vettore
+  Output: 1.19-Puoi combinare vettori per creare un nuovo vettore. Crea un nuovo vettore
     che contiene z, 555 e poi z di nuovo in quest'ordine. Non assegnare questo vettore
     a una nuova variabile, così potremo vedere il risultato immediatamente.
   CorrectAnswer: c(z, 555, z)
@@ -122,28 +116,28 @@
   Hint: Digita c(z, 555, z). Non creare una nuova variabile. Vogliamo solo visualizzare
     il risultato.
 - Class: cmd_question
-  Output: '1.22-I vettori numerici possono essere utilizzati nelle espressioni aritmetiche.
+  Output: '1.20-I vettori numerici possono essere utilizzati nelle espressioni aritmetiche.
     Digita quanto segue per vedere cosa succede: z * 2 + 100.'
   CorrectAnswer: z * 2 + 100
   AnswerTests: omnitest(correctExpr='z * 2 + 100')
   Hint: Inserisci z * 2 + 100, senza assegnare il risultato a una variabile. Il simbolo
     * viene utilizzato per la moltiplicazione.
 - Class: text
-  Output: 1.23-R rispetta le normali priorità algebriche
+  Output: 1.21-R rispetta le normali priorità algebriche
 - Class: text
-  Output: 1.24-Altri operatori aritmetici comuni sono +, -, / e ^ (dove x^2 significa
+  Output: 1.22-Altri operatori aritmetici comuni sono +, -, / e ^ (dove x^2 significa
     'x al quadrato'). Per calcolare la radice quadrata, usa la funzione sqrt() e per
     calcolare il valore assoluto, usa la funzione abs().
 - Class: text
-  Output: 1.25-Quando vengono dati due vettori della stessa lunghezza, R esegue semplicemente
+  Output: 1.23-Quando vengono dati due vettori della stessa lunghezza, R esegue semplicemente
     l'operazione aritmetica specificata (`+`, `-`, `*`, ecc.) elemento per elemento.
     Se i vettori sono di lunghezza diversa, R "ricicla" il vettore più corto finché
     non raggiunge la stessa lunghezza del vettore più lungo.
 - Class: text
-  Output: 1.26-Quando abbiamo fatto z * 2 + 100 nel nostro esempio precedente, z era
+  Output: 1.24-Quando abbiamo fatto z * 2 + 100 nel nostro esempio precedente, z era
     un vettore di lunghezza 3, ma tecnicamente 2 e 100 sono vettori di lunghezza 1.
 - Class: cmd_question
-  Output: 1.27-Per vedere un altro esempio di come funziona il 'riciclo' dei vettori,
+  Output: 1.25-Per vedere un altro esempio di come funziona il 'riciclo' dei vettori,
     provate ad aggiungere c(1, 2, 3, 4) e c(0, 10). Non preoccupatevi di salvare il
     risultato in una nuova variabile.
   CorrectAnswer: c(1, 2, 3, 4) + c(0, 10)
@@ -151,45 +145,38 @@
   Hint: Inserite c(1, 2, 3, 4) + c(0, 10) nella console per vedere come R somma due
     vettori di lunghezza diversa. Non assegnate il risultato a una variabile.
 - Class: text
-  Output: 1.28-Se la lunghezza del vettore più corto non è divisibile per la lunghezza
-    del vettore più lungo, R applicherà comunque il metodo del 'riciclo', ma lancerà
-    un warning per far capire che potrebbe esserci qualcosa di strano.
+  Output: 1.26-Se la lunghezza del vettore più corto non è divisibile per la lunghezza
+    del vettore più lungo, R applicherà comunque il metodo del 'riciclo', ma stamperà
+    un messaggio di warning per far notare che potrebbe esserci qualcosa di strano.
 - Class: cmd_question
-  Output: 1.29-Provate c(1, 2, 3, 4) + c(0, 10, 100) per esempio.
+  Output: 1.27-Provate c(1, 2, 3, 4) + c(0, 10, 100) per esempio.
   CorrectAnswer: c(1, 2, 3, 4) + c(0, 10, 100)
   AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10, 100)')
   Hint: Digitate c(1, 2, 3, 4) + c(0, 10, 100) per vedere come R gestisce la somma
     di due vettori, quando la lunghezza del vettore più lungo non è divisibile per
     la lunghezza del vettore più corto. Non preoccuparti di assegnare il risultato
     a un oggetto.
-- Class: cmd_question
-  Output: '1.30-Spiegazione 1.2: Adesso sperimentiamo un po'' liberamente con play
-    prima di imparare altri comandi. Per ricominciare il lavoratorio utilizziamo nxt()'
-  CorrectAnswer: play()
-  AnswerTests: omnitest(correctExpr='play()')
-  Hint: Utilizzare play() per sperimentare liberamente.
 - Class: text
-  Output: 1.31-PAUSA 1.2
-- Class: text
-  Output: 1.32-All'inizio della lezione, avete calcolato z * 2 + 100. Facciamo finta
+  Output: 1.28-All'inizio della lezione, avete calcolato z * 2 + 100. Facciamo finta
     che abbiate commesso un errore e che abbiate voluto aggiungere 1000 anziché 100.
     Si può riscrivere l'espressione, oppure...
 - Class: cmd_question
-  Output: 1.33-In molti ambienti di programmazione, la freccia verso l'alto scorre
+  Output: 1.29-In molti ambienti di programmazione, la freccia verso l'alto scorre
     i comandi precedenti. Provate a premere la freccia verso l'alto sulla tastiera
     fino a raggiungere questo comando (z * 2 + 100), quindi cambiate 100 in 1000 e
-    premete Invio. Se la freccia verso l'alto non funziona, digitate semplicemente
-    il comando corretto oppure saltate la risposta con skip().
+    premete Invio. Ricordate questa funzione perché è molto utile. Se la freccia verso
+    l'alto non funziona, digitate semplicemente il comando corretto oppure saltate
+    la risposta con skip().
   CorrectAnswer: z * 2 + 1000
   AnswerTests: omnitest(correctExpr='z * 2 + 1000')
   Hint: Se il vostro ambiente non supporta la funzione di freccia verso l'alto, digitate
     il comando corretto oppure skip() per andare avanti.
 - Class: text
-  Output: 1.34-Infine, facciamo finta di voler visualizzare il contenuto di una variabile
+  Output: 1.30-Infine, facciamo finta di voler visualizzare il contenuto di una variabile
     creata in precedenza, ma non riusciamo a ricordare se l'abbiamo chiamata mia_div
     o miaDiv. Possiamo provare con entrambe e vedere cosa funziona, oppure...
 - Class: cmd_question
-  Output: 1.35-È possibile digitare le prime due lettere del nome della variabile,
+  Output: 1.31-È possibile digitare le prime due lettere del nome della variabile,
     quindi premere il tasto Tab (possibilmente più di una volta). La maggior parte
     degli ambienti di programmazione fornisce un elenco delle variabili create che
     iniziano con 'x'. Questa funzione si chiama completamento automatico e può essere
@@ -200,3 +187,7 @@
   AnswerTests: omnitest(correctExpr='x')
   Hint: Se il vostro ambiente di programmazione non supporta il completamento automatico,
     digitate x e premete Invio per andare avanti.
+- Class: text
+  Output: 1.32-L'utilizzo delle frecce per scorrere tra i comandi impartiti in precedenza
+    e il tab per completare il nome di un oggetto sono molto pratici nell'utilizzo
+    di R. Teneteli a mente.
