@@ -7,7 +7,7 @@
 
 # Path to installed lesson
 .lessonpath <- file.path(.get_course_path(), "R-base-course-in-Italian",
-                        "apply")
+                        "11-apply")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "brigida.csv")
 # Load dataset

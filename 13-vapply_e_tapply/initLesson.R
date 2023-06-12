@@ -8,7 +8,7 @@
 
 # Path to installed lesson
 .lessonpath <- file.path(.get_course_path(), "R-base-course-in-Italian",
-                         "lapply_e_sapply")
+                         "12-lapply_e_sapply")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "flag.data.txt")
 # Load dataset
