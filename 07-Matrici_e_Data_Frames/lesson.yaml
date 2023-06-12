@@ -4,7 +4,7 @@
   Author: Nick Carchedi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 7.1-In questa lezione tratteremo matrici e frame di dati. Entrambi rappresentano
     tipi di dati "rettangolari", nel senso che vengono utilizzati per archiviare dati

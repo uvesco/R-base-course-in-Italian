@@ -4,7 +4,7 @@
   Author: Nick Carchedi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 6.1-In questa lezione vedremo come estrarre elementi da un vettore in base
     ad alcune condizioni che specifichiamo.

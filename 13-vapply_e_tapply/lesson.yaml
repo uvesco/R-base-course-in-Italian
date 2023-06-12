@@ -4,7 +4,7 @@
   Author: Nick Carchedi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: '13.1-Nell''ultima lezione, hai imparato a conoscere i due membri fondamentali
     della famiglia di funzioni *apply di R: lapply() e sapply(). Entrambi accettano

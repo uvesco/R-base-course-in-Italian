@@ -5,7 +5,7 @@ versionNum <- "3.0.1"
 
 # Imposta il percorso della directory principale del corso
 corso_dir <- getwd()
-versionNum <- "3.0.0"
+# versionNum <- "3.0.0"
 
 # estrazione dei nomi contratti dal file MANIFEST
 manifest_file <- file.path(corso_dir, "MANIFEST")
@@ -13,9 +13,9 @@ nuoviNomiC <- readLines(manifest_file)
 
 for (j in seq_along(nuoviNomiC)) {
   yaml_file <- file.path(corso_dir, nuoviNomiC[j], "lesson.yaml")
-  file.copy(yaml_file,
-            file.path(corso_dir, nuoviNomiC[j], "lesson_old2.yaml")
-  )
+  # file.copy(yaml_file,
+  #           file.path(corso_dir, nuoviNomiC[j], "lesson_old2.yaml")
+  #)
   #numero di lezione
   numLess <- as.numeric(gsub("(.+?)(\\-.*)", "\\1", nuoviNomiC[j]))
   yaml <- read_yaml(yaml_file)

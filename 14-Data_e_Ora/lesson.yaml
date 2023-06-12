@@ -4,7 +4,7 @@
   Author: Nick Carchedi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 14.1-R ha un modo speciale di rappresentare date e ore, che può essere utile
     se stai lavorando con dati che mostrano come qualcosa cambia nel tempo (ad esempio

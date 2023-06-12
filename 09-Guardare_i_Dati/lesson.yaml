@@ -4,7 +4,7 @@
   Author: Nick Carchedi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 9.1-Ogni volta che lavori con un nuovo set di dati, la prima cosa da fare
     è guardarlo! Qual è il formato dei dati? Quali sono le dimensioni? Quali sono

@@ -4,7 +4,7 @@
   Author: Sean Kross Umberto Vesco Livilla Maggi
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 8.1-Questa lezione vuole essere una breve introduzione alle operazioni logiche
     in R.

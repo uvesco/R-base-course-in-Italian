@@ -4,7 +4,7 @@
   Author: Sean Kross
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 10.1-Le funzioni sono uno degli elementi costitutivi fondamentali del linguaggio
     R. Sono piccoli pezzi di codice riutilizzabile che possono essere trattati come

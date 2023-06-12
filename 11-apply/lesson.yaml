@@ -4,7 +4,7 @@
   Author: Umberto Vesco
   Type: Standard
   Organization: Unaapi
-  Version: 3.0.0
+  Version: 3.0.1
 - Class: text
   Output: 11.1-In questa lezione imparerai come usare apply().
 - Class: cmd_question
