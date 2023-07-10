@@ -11,3 +11,5 @@ idee:
 creare un repository per il monitoraggio varroa e aprirlo alla collaborazione 
 
 funzioni_utili
+
+https://rundel.github.io/ghclass/articles/ghclass.html
